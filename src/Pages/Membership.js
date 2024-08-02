@@ -81,8 +81,8 @@ import LottieAnimation from '../LottieAnimation/LottieAnimation';
 import gymAnimation from '../LottieAnimation/jim.json';
 import yogaAnimation from '../LottieAnimation/yoga.json';
 import badmintonAnimation from '../LottieAnimation/baisic.json';
-import swimmingAnimation from '../LottieAnimation/baisic.json';
-import cricketAnimation from '../LottieAnimation/baisic.json';
+import swimmingAnimation from '../LottieAnimation/running.json';
+import cricketAnimation from '../LottieAnimation/Weightlifting.json';
 import './CSS/Membership.css';
 
 const membershipPlans = [

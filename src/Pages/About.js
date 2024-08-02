@@ -1,18 +1,28 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import aboutImg from "../assets/about.png";
 import founder1 from "../assets/Founder1.png";
 import founder2 from "../assets/Founder2.png";
 import founder3 from "../assets/Founder3.png";
-
 // motion
 import { motion } from "framer-motion";
 // variants
 import { fadeIn } from "../variants";
 
+// Import Lottie
+import Lottie from 'lottie-react';
+import aboutAnimation from "../LottieAnimation/about.json"; // Update path as needed
+
 // Import CSS
 import './CSS/About.css';
 
 const About = () => {
+  const navigate = useNavigate();
+
+  const handleLearnMore = () => {
+    navigate('/learn-more');
+  };
+
   return (
     <div className="about-container">
       {/* about section */}
@@ -24,10 +34,10 @@ const About = () => {
           viewport={{ once: false, amount: 0.5 }}
           className="about-image"
         >
-          <img 
-            src={aboutImg} 
-            alt="About" 
-            className="about-img"
+          <Lottie 
+            animationData={aboutAnimation}
+            loop={true}
+            style={{ width: '100%', height: 'auto' }}
           />
         </motion.div>
         <motion.div
@@ -45,7 +55,7 @@ const About = () => {
             <br /><br />
             Our mission is to provide every grassroots player with the opportunity to enhance their skills in the early stages of their sports career. We have identified a gap in the market where basic skill development and static training are not being addressed by sports schools or academies. Our solution is to offer personalized training with the help of IT support to ensure every athlete reaches their full potential. Our ultimate goal is to create a significant impact in the sports industry by winning the maximum number of medals in the Olympic Games.
           </p>
-          <button className="btn-primary">Learn More</button>
+          <button className="btn-success" onClick={handleLearnMore}>Learn More</button>
         </motion.div>
       </div>
 

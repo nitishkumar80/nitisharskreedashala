@@ -20,6 +20,7 @@ import RegisterForm from '../Pages/RegisterForm';
 import ProfileCreationForm from '../Pages/ProfileCreationForm';
 import CoachAdmissionForm from '../Pages/CoachAdmissionForm';
 import ChampAdmissionForm from '../Pages/ChampAdmissionForm';
+import LearnMore from '../Pages/LearnMore';
 
 export default function NavBar() {
   const [showLogin, setShowLogin] = useState(false);
@@ -121,6 +122,7 @@ export default function NavBar() {
         <Route path="/bookingform/:type" element={<BookingForm />} />
         <Route path="/login" element={<Login />} />
         <Route path="/create-profile" element={< ProfileCreationForm />} />
+        <Route path="/learn-more" element={<LearnMore />} />
       </Routes>
 
       {/* Popup Forms */}
