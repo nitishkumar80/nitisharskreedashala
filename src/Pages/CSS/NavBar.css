@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+.navbar {
+  background-color: #ffffff; /* Change to a solid color or gradient as needed */
+  padding: 0.5rem 1rem; /* Adjust padding as needed */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  font-family: "Titillium Web", sans-serif;
+}
+
+/* Adjust the logo size and add margin */
+.BrandLogo {
+  width: 150px; /* Adjust size as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 1rem; /* Space between logo and navigation links */
+  transition: transform 0.3s ease-in-out;
+}
+
+.BrandLogo:hover {
+  transform: scale(1.1); /* Slightly enlarge logo on hover */
+}
+
+/* Remove underline from links */
+.Nav-List .nav-link a {
+  font-family: "Titillium Web", sans-serif;
+  font-size: 16px; /* Adjust size as needed */
+  font-family: "Titillium Web", sans-serif;
+  text-decoration: none; /* Remove underline */
+  color: #333; /* Default text color */
+  padding: 0.5rem 1rem; /* Add padding for better spacing */
+}
+
+.Nav-List .nav-link a:hover {
+  color: #007bff; /* Highlight color on hover */
+}
+
+.active {
+  background-color: green; /* Background color for active link */
+  color: white !important; /* Text color for active link */
+  border-radius: 5px; /* Rounded corners */
+  padding: 0.5rem 1rem; /* Add padding */
+}
+
+.navbar-collapse {
+  transition: height 0.3s ease, opacity 0.3s ease;
+}
+
+.navbar-collapse.collapsing {
+  height: 0;
+  opacity: 0;
+}
+
+.navbar-collapse.show {
+  height: auto;
+  opacity: 1;
+}
+
+.ms-auto {
+  margin-left: auto;
+}
+
+button {
+
+  font-family: "Titillium Web", sans-serif;
+}
+
+.green-btn {
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  border: none; /* Remove border */
+  border-radius: 20px; /* Rounded corners */
+}
+
+.green-btn:hover {
+  background-color: #45a049; /* Darker green on hover */
+  color: white; /* Keep text color white on hover */
+}

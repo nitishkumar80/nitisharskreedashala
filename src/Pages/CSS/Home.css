@@ -1,0 +1,33 @@
+/* Home.css */
+.bg-neutralSilver {
+  background-color: #f3f3f3; /* Adjust as needed */
+}
+
+.carousel-image {
+  max-width: 100%;
+  margin-top: 90px;
+  height: auto;
+}
+
+.text-container {
+  text-align: left;
+  font-family: "Titillium Web", sans-serif;
+}
+
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.text-neutralDGrey {
+  color: #333333; /* Adjust as needed */
+}
+
+.text-brandPrimary {
+  color: #1a73e8; /* Adjust as needed */
+}
+
+.text-neutralGrey {
+  color: #666666; /* Adjust as needed */
+}

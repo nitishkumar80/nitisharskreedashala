@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+body {
+  font-family: "Titillium Web", sans-serif;
+}
+
+.service-container {
+  padding: 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #f9fafb;
+  align-items: center;
+  color: #fff; /* Ensure text is readable on background image */
+}
+
+.service-title {
+  font-family: "Titillium Web", sans-serif;
+  font-size: 2rem;
+  margin-top: 110px;
+  color: #ff8000;
+}
+
+.service-cards {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+  gap: 30px;
+  width: 100%;
+}
+
+.service-card-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.service-card {
+  background: #90E2A8; /* White background to make it stand out */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease;
+  text-align: center;
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+}
+
+.animation-container {
+  padding: 10px;
+}
+
+.service-card-title {
+  font-size: 1.5rem;
+  color: #ff8000;
+  margin: 10px 0;
+  text-align: center;
+  font-family: "Titillium Web", sans-serif;
+}
+
+.service-description {
+  font-size: 1rem;
+  padding: 0 10px 10px;
+  text-align: justify;
+  text-justify: inter-word;
+  text-align: center;
+  font-family: "Titillium Web", sans-serif;
+}
+
+.service-card-link {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Use the color from parent */
+}

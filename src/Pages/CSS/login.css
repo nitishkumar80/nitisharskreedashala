@@ -1,0 +1,15 @@
+.align-center {
+    display: block; /* Make it a block-level element to use margin auto for centering */
+    margin: 0 auto; /* Center it horizontally */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove underline */
+    color: #007bff; /* Optional: Set a color */
+    margin-top: 10px; /* Add some margin for spacing */
+  }
+  
+  /* Optional: Add hover effect */
+  .align-center:hover {
+    color: #0056b3; /* Optional: Change color on hover */
+    text-decoration: underline; /* Optional: Add underline on hover */
+  }
+  
