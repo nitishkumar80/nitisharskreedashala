@@ -14,7 +14,7 @@ body {
   flex-direction: column;
   background-color: #f9fafb;
   align-items: center;
-  color: #fff; /* Ensure text is readable on background image */
+  color: #0a0909; /* Ensure text is readable on background image */
 }
 
 .service-title {
@@ -38,7 +38,7 @@ body {
 }
 
 .service-card {
-  background: #90E2A8; /* White background to make it stand out */
+  background: #ffffff; /* White background to make it stand out */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;

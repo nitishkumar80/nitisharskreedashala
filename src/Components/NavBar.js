@@ -123,6 +123,7 @@ export default function NavBar() {
         <Route path="/login" element={<Login />} />
         <Route path="/create-profile" element={< ProfileCreationForm />} />
         <Route path="/learn-more" element={<LearnMore />} />
+        
       </Routes>
 
       {/* Popup Forms */}
