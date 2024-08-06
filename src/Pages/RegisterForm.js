@@ -272,12 +272,16 @@ const RegisterForm = ({ onClose }) => {
           onChange={handleChange}
           placeholder="Enter your phone number"
         />
+             <Button variant="success" className="1" onClick={handleChange}>
+          Send Otp
+        </Button>
       </Form.Group>
 
       <Form.Group controlId="formOtp">
-        <Form.Label>OTP</Form.Label>
+        <Form.Label   className="mt-3" >OTP</Form.Label>
         <Form.Control
           type="text"
+        
           name="otp"
           value={formData.otp}
           onChange={handleChange}
@@ -488,10 +492,13 @@ const RegisterForm = ({ onClose }) => {
                   onChange={handleChange}
                   placeholder="Enter your phone number"
                 />
+                         <Button variant="success" className="mt-1" onClick={handleChange}>
+          Send Otp
+        </Button>
               </Form.Group>
 
               <Form.Group controlId="formOtp">
-                <Form.Label>OTP</Form.Label>
+                <Form.Label className="mt-3">OTP</Form.Label>
                 <Form.Control
                   type="text"
                   name="otp"
@@ -505,7 +512,7 @@ const RegisterForm = ({ onClose }) => {
               </Form.Group>
 
               <Form.Group controlId="formBookingHours">
-                <Form.Label>Booking Hours</Form.Label>
+                <Form.Label className="mt-3">Booking Hours</Form.Label>
                 <Form.Control
                   type="text"
                   name="bookingHours"

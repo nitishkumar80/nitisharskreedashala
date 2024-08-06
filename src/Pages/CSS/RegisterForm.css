@@ -8,7 +8,7 @@ body{
 
 
 .modal-body {
-  display: flex;
+  font-family: "Titillium Web", sans-serif;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -16,6 +16,13 @@ body{
 
 .register-button {
   margin: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-left: 10%;
+  font-family: "Titillium Web", sans-serif;
 }
 
 .form-fields {
@@ -31,11 +38,8 @@ button {
 }
 
 img {
-  max-width: 100%;
+  max-width: 300px;
   height: auto;
   border-radius: 5px;
 }
 
-.Title-name{
-  color:'red';
-}
