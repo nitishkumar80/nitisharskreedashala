@@ -6,7 +6,7 @@ import { fadeIn } from '../variants';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './CSS/RegisterForm.css';
-import register from '../Images/main/register.png';
+import register from '../Images/main/register1.jpg';
 
 const RegisterForm = ({ onClose }) => {
   const [showMainModal, setShowMainModal] = useState(true);
