@@ -19,15 +19,13 @@
 }
 
 /* Remove underline from links */
-.Nav-List .nav-link a {
-  font-family: "Titillium Web", sans-serif;
-  font-size: 16px; /* Adjust size as needed */
-  font-family: "Titillium Web", sans-serif;
-  text-decoration: none; /* Remove underline */
-  color: #333; /* Default text color */
-  padding: 0.5rem 1rem; /* Add padding for better spacing */
+.nav-link a {
+  text-decoration: none;
 }
 
+.nav-link a.active {
+  text-decoration: none;
+}
 .Nav-List .nav-link a:hover {
   color: #007bff; /* Highlight color on hover */
 }
