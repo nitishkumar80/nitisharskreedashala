@@ -1,34 +1,75 @@
 .carousel-container {
   width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  box-sizing: border-box;
+  height: 100vh; /* Full height of the viewport */
 }
 
-.carousel .slide img {
-  width: 100%;
-  height: auto;
+.slide-content {
+  display: flex;
+  margin-top: 90px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  height: 100%; /* Full height of the carousel */
+}
+
+.text-content {
+  flex: 1;
+  margin-right: 20px;
+  color: #000000;
+}
+
+.title-heading {
+  font-size: 3rem; /* Increase font size */
+  color: #ff6a06; /* Change text color */
+  margin-bottom: 1rem;
+}
+
+.title-heading span {
+  color: #ffd700; /* Change span color */
+}
+
+p {
+  font-size: 1.5rem; /* Increase font size */
+  margin-bottom: 1rem;
+}
+
+.btn-primary {
+  padding: 10px 20px;
+  font-size: 1.2rem; /* Increase font size */
+}
+
+.image-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.image-content img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Ensure image fits within its container */
 }
 
 @media (max-width: 768px) {
-  .carousel-container {
-    max-width: 90%;
-    padding: 10px;
+  .slide-content {
+    flex-direction: column;
+    text-align: center;
   }
 
-  .carousel .legend {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  .carousel-container {
-    max-width: 100%;
-    padding: 5px;
+  .text-content {
+    margin-right: 0;
+    margin-bottom: 20px;
   }
 
-  .carousel .legend {
-    font-size: 12px;
+  .title-heading {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+
+  .btn-primary {
+    font-size: 1rem;
   }
 }

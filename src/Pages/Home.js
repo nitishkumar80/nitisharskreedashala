@@ -1,13 +1,14 @@
-
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import './CSS/Home.css';
 import React from "react";
+import { motion } from "framer-motion";
+import Banner from "../assets/home-banner.png";
+import Banner1 from "../assets/home-banner2.png";
 
 const Home = () => {
   return (
-    <div>
-      <h1>Welcome to the Image Carousel</h1>
+    <div className="carousel-container">
       <Carousel
         showThumbs={false}
         autoPlay
@@ -16,17 +17,71 @@ const Home = () => {
         showIndicators={false}
         showStatus={false}
       >
-        <div>
-          <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c3BvcnR8ZW58MHx8MHx8fDA%3D" alt="Slide 1" />
-          <p className="legend">Slide 1</p>
+        <div className="slide-content">
+          <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            className="text-content"
+          >
+            <h1 className="title-heading">
+              Welcome to <span>Kreedashala</span>
+            </h1>
+            <p>Future of Sport Training</p>
+            <button className="btn btn-primary">Register now</button>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            className="image-content"
+          >
+            <img src={Banner} alt="Slide 1" />
+          </motion.div>
         </div>
-        <div>
-          <img src="https://images.unsplash.com/photo-1522898467493-49726bf28798?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHNwb3J0fGVufDB8fDB8fHww" alt="Slide 2" />
-          <p className="legend">Slide 2</p>
+        <div className="slide-content">
+          <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            className="text-content"
+          >
+            <h1 className="title-heading">
+              COME <span>AND BE</span> THE BEST
+            </h1>
+            <p>Future of Sport Training</p>
+            <button className="btn btn-primary">Register now</button>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            className="image-content"
+          >
+            <img src={Banner1} alt="Slide 2" />
+          </motion.div>
         </div>
-        <div>
-          <img src="https://media.istockphoto.com/id/465383082/photo/female-swimmer-at-the-swimming-pool.jpg?s=612x612&w=0&k=20&c=tcTwN2rTvUBK4wddan_GUCxrXX6bBoU-hyrVMvmT0BM=" alt="Slide 3" />
-          <p className="legend">Slide 3</p>
+        <div className="slide-content">
+          <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            className="text-content"
+          >
+            <h1 className="title-heading">
+              JOIN <span>US</span> NOW
+            </h1>
+            <p>Future of Sport Training</p>
+            <button className="btn btn-primary">Register now</button>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            className="image-content"
+          >
+            <img src={Banner} alt="Slide 3" />
+          </motion.div>
         </div>
       </Carousel>
     </div>
