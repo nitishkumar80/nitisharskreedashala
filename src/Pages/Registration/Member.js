@@ -1,59 +1,40 @@
 import React, { useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import { jsPDF } from "jspdf";
-
 import { motion } from "framer-motion";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const Coach = ({ show, handleClose }) => {
+const Member = ({ show, handleClose }) => {
   const [formData, setFormData] = useState({
     name: "",
     age: "",
     aadharNo: "",
-    experience: "",
-    college: "",
-    sports: "",
-    achievement: "",
-    idMark: "",
-    bloodGroup: "",
+    photo: null,
     address: "",
+    phone: "",
+    otp: ""
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
-      [name]: value,
+      [name]: value
+    }));
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    setFormData((prevData) => ({
+      ...prevData,
+      photo: file
     }));
   };
 
   const validateForm = () => {
-    const {
-      name,
-      age,
-      aadharNo,
-      experience,
-      college,
-      sports,
-      achievement,
-      idMark,
-      bloodGroup,
-      address,
-    } = formData;
-
-    return (
-      name &&
-      age &&
-      aadharNo &&
-      experience &&
-      college &&
-      sports &&
-      achievement &&
-      idMark &&
-      bloodGroup &&
-      address
-    );
+    const { name, age, aadharNo, address, phone, otp } = formData;
+    return name && age && aadharNo && address && phone && otp && formData.photo;
   };
 
   const handleSubmit = (userType) => {
@@ -71,13 +52,8 @@ const Coach = ({ show, handleClose }) => {
       doc.text(`Name: ${formData.name}`, 10, 20);
       doc.text(`Age: ${formData.age}`, 10, 30);
       doc.text(`Aadhar No: ${formData.aadharNo}`, 10, 40);
-      doc.text(`Experience: ${formData.experience}`, 10, 50);
-      doc.text(`College: ${formData.college}`, 10, 60);
-      doc.text(`Sports: ${formData.sports}`, 10, 70);
-      doc.text(`Achievement: ${formData.achievement}`, 10, 80);
-      doc.text(`Identification Mark: ${formData.idMark}`, 10, 90);
-      doc.text(`Blood Group: ${formData.bloodGroup}`, 10, 100);
-      doc.text(`Address: ${formData.address}`, 10, 110);
+      doc.text(`Address: ${formData.address}`, 10, 50);
+      doc.text(`Phone: ${formData.phone}`, 10, 60);
       doc.save(`${userType}_Registration.pdf`);
     } else {
       toast.error("Please fill in all fields before downloading the PDF!");
@@ -87,7 +63,7 @@ const Coach = ({ show, handleClose }) => {
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Coach Registration</Modal.Title>
+        <Modal.Title>Member Registration</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form>
@@ -130,69 +106,12 @@ const Coach = ({ show, handleClose }) => {
               />
             </Form.Group>
 
-            <Form.Group controlId="formExperience">
-              <Form.Label>Experience</Form.Label>
+            <Form.Group controlId="formPhoto">
+              <Form.Label>Photo</Form.Label>
               <Form.Control
-                type="text"
-                name="experience"
-                value={formData.experience}
-                onChange={handleChange}
-                placeholder="Enter years of experience"
-              />
-            </Form.Group>
-
-            <Form.Group controlId="formCollege">
-              <Form.Label>College</Form.Label>
-              <Form.Control
-                type="text"
-                name="college"
-                value={formData.college}
-                onChange={handleChange}
-                placeholder="Enter college name"
-              />
-            </Form.Group>
-
-            <Form.Group controlId="formSports">
-              <Form.Label>Sports</Form.Label>
-              <Form.Control
-                type="text"
-                name="sports"
-                value={formData.sports}
-                onChange={handleChange}
-                placeholder="Enter sports"
-              />
-            </Form.Group>
-
-            <Form.Group controlId="formAchievement">
-              <Form.Label>Achievement</Form.Label>
-              <Form.Control
-                type="text"
-                name="achievement"
-                value={formData.achievement}
-                onChange={handleChange}
-                placeholder="Enter your achievements"
-              />
-            </Form.Group>
-
-            <Form.Group controlId="formIdMark">
-              <Form.Label>Identification Mark</Form.Label>
-              <Form.Control
-                type="text"
-                name="idMark"
-                value={formData.idMark}
-                onChange={handleChange}
-                placeholder="Enter identification mark"
-              />
-            </Form.Group>
-
-            <Form.Group controlId="formBloodGroup">
-              <Form.Label>Blood Group</Form.Label>
-              <Form.Control
-                type="text"
-                name="bloodGroup"
-                value={formData.bloodGroup}
-                onChange={handleChange}
-                placeholder="Enter blood group"
+                type="file"
+                name="photo"
+                onChange={handleFileChange}
               />
             </Form.Group>
 
@@ -207,22 +126,51 @@ const Coach = ({ show, handleClose }) => {
               />
             </Form.Group>
 
+            <Form.Group controlId="formPhone">
+              <Form.Label>Phone</Form.Label>
+              <Form.Control
+                type="text"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="Enter your phone number"
+              />
+              <Button variant="success" className="mt-1" onClick={handleChange}>
+                Send OTP
+              </Button>
+            </Form.Group>
+
+            <Form.Group controlId="formOtp">
+              <Form.Label className="mt-3">OTP</Form.Label>
+              <Form.Control
+                type="text"
+                name="otp"
+                value={formData.otp}
+                onChange={handleChange}
+                placeholder="Enter OTP"
+              />
+              <Button variant="success" className="mt-2" onClick={handleChange}>
+                Verify
+              </Button>
+            </Form.Group>
+
             <Button
               variant="primary"
               type="button"
-              onClick={() => handleSubmit("Coach")}
               className="mt-3"
+              onClick={() => handleSubmit("Champ")}
             >
               Submit
             </Button>
           </motion.div>
         </Form>
       </Modal.Body>
+
       <Modal.Footer>
         <Button variant="secondary" onClick={handleClose}>
           Close
         </Button>
-        <Button variant="secondary" onClick={() => handleDownloadPDF("Coach")}>
+        <Button variant="secondary" onClick={() => handleDownloadPDF("Champ")}>
           Download PDF
         </Button>
       </Modal.Footer>
@@ -231,4 +179,4 @@ const Coach = ({ show, handleClose }) => {
   );
 };
 
-export default Coach;
+export default Member;

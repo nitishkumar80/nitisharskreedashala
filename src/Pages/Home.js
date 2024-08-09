@@ -4,7 +4,8 @@ import './CSS/Home.css';
 import React from "react";
 import { motion } from "framer-motion";
 import Banner from "../assets/home-banner.png";
-import Banner1 from "../assets/home-banner2.png";
+import Banner1 from "../assets/banner5.png";
+import Banner6 from "../assets/banner6.png";
 
 const Home = () => {
   return (
@@ -80,12 +81,100 @@ const Home = () => {
             transition={{ duration: 1 }}
             className="image-content"
           >
-            <img src={Banner} alt="Slide 3" />
+            <img src={Banner6} alt="Slide 3" />
           </motion.div>
         </div>
       </Carousel>
+
+
+
+
+   <div className="home-container">
+    <h1 className="home-title">Ars Kreedashala - Who Are We?</h1>
+      <div className="product-features" data-product-features="">
+        <div className="product-features__feature">
+          <div className="product-feature product-feature--bear" data-product-features-feature="">
+            <div className="product-feature__box" data-trackable-click-event="product-feature-box">
+              <div className="bordered-box bordered-box--extra-padding">
+                <h3 className="heading heading--size5">
+                Integrating Sports into Every Child’s Education
+                </h3>
+                <div>
+                Kreedashala is a renowned Indian sports 
+education organization, and we believe 
+in making sports an integral part of 
+every child’s education
+                </div>
+              </div>
+            </div>
+            <img className="product-feature__image" src="https://png.pngtree.com/png-vector/20240314/ourmid/pngtree-sports-trainers-are-suggesting-a-game-plan-football-player-and-coach-png-image_11948738.png" width="186" height="147" alt="Everything you need feature highlighted" />
+            <div className="product-feature__attribution">
+              <div className="attribution">
+                by Atul Singh
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="product-features__feature">
+          <div className="product-feature product-feature--lentils" data-product-features-feature="active">
+            <div className="product-feature__box" data-trackable-click-event="product-feature-box">
+              <div className="bordered-box bordered-box--extra-padding">
+                <h3 className="heading heading--size5">
+                Structured Sports & P.E Curriculum
+                </h3>
+                <div>
+                We are working towards 
+developing a healthier & fitter 
+generation by using a Structured 
+Sports and Physical Education (P.E) 
+curriculum.
+                </div>
+              </div>
+            </div>
+            <img className="product-feature__image" src="https://static.vecteezy.com/system/resources/previews/027/189/304/non_2x/sports-school-coach-training-child-in-running-flat-vector-illustration-isolated-png.png" width="222" height="241" alt="10+ designers feature highlighted" />
+            <div className="product-feature__attribution">
+              <div className="attribution">
+                by Martis Lupus
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="product-features__feature">
+          <div className="product-feature product-feature--bird" data-product-features-feature="">
+            <div className="product-feature__box" data-trackable-click-event="product-feature-box">
+              <div className="bordered-box bordered-box--extra-padding">
+                <h3 className="heading heading--size5">
+                Curriculum Based on NASPE Standards
+                </h3>
+                <div>
+                The Kreedashaala curriculum has been 
+developed based on NASPE Standards
+ (National Association for Sports & 
+Physical Education)
+                </div>
+              </div>
+            </div>
+            <img className="product-feature__image" src="https://png.pngtree.com/png-vector/20221010/ourmid/pngtree-soccer-coach-training-children-on-stadium-vector-png-image_6269668.png" width="157" height="173" alt="100% money-back guarantee feature highlighted" />
+            <div className="product-feature__attribution">
+              <div className="attribution">
+                by pmo
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
     </div>
   );
 };
 
 export default Home;
+
+

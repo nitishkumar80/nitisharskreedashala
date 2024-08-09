@@ -1,61 +1,74 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+/* Contact.css */
 
-body{
-    font-family: "Titillium Web", sans-serif;
-}
-
-.contact_us {
-    padding: 50px 0;
-    margin-top: 90px;
-}
-
-.lottie-container {
+.bg {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .contact_us {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 100%;
-}
-
-.contact_inner {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    height: 100%;
-}
-
-.contact_form_inner {
+    z-index: 1;
+  }
+  
+  .lottie-container {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .contact_inner {
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background for better readability */
     padding: 20px;
-    font-family: "Titillium Web", sans-serif;
-
-}
-
-.contact-form {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .contact-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .contact-description {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .contact-form {
     display: flex;
     flex-direction: column;
-}
-
-.form-control {
+  }
+  
+  .form-control {
     margin-bottom: 15px;
-}
-
-.contact_form_submit {
+  }
+  
+  .form-group {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  .contact_form_submit {
     background-color: #007bff;
     color: white;
     border: none;
-    padding: 10px;
-    cursor: pointer;
+    padding: 10px 20px;
     border-radius: 5px;
-}
-
-.contact-title {
-    font-size: 24px;
-    font-family: "Titillium Web", sans-serif;
-
-    margin-bottom: 10px;
-}
-
-.contact-description {
-    margin-bottom: 20px;
-    font-family: "Titillium Web", sans-serif;
-
-}
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .contact_form_submit:hover {
+    background-color: #0056b3;
+  }
+  
