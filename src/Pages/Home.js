@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Carousel } from "react-responsive-carousel";
 import { motion } from "framer-motion";
-import NET from "vanta/dist/vanta.clouds2.min";
+import NET from "vanta/dist/vanta.clouds.min";
 import * as THREE from 'three'; // Import Three.js directly
 import Banner from "../assets/home-banner.png";
 import Banner1 from "../assets/banner5.png";
