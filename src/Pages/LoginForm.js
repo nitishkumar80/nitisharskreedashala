@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import "./CSS/login.css";
 
 const LoginForm = ({ onClose }) => {
+  const [isSignUp, setIsSignUp] = useState(false);
+  const [isActive, setIsActive] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState('');
   const [otp, setOtp] = useState('');
   const [isOtpSent, setIsOtpSent] = useState(false);
@@ -11,6 +13,20 @@ const LoginForm = ({ onClose }) => {
   const [password, setPassword] = useState('');
   const [role, setRole] = useState('guest');
   const navigate = useNavigate();
+
+  const handleSignUp = () => {
+    setIsSignUp(true);
+    setTimeout(() => {
+      setIsActive(true);
+    }, 100);
+  };
+
+  const handleSignIn = () => {
+    setIsSignUp(false);
+    setTimeout(() => {
+      setIsActive(true);
+    }, 100);
+  };
 
   const handleSendOtp = () => {
     setIsOtpSent(true);
@@ -36,75 +52,81 @@ const LoginForm = ({ onClose }) => {
   return (
     <Modal show onHide={onClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Login</Modal.Title>
+        <Modal.Title>{isSignUp ? 'Sign Up' : 'Sign In'}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form onSubmit={handleLogin}>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control
-              type="email"
-              placeholder="Enter email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </Form.Group>
+          <div className="cont_principal">
+            <div className={`cont_centrar ${isActive ? 'cent_active' : ''}`}>
+              <div className="cont_login">
+                <div className="cont_tabs_login">
+                  <ul className="ul_tabs">
+                    <li className={!isSignUp ? 'active' : ''}>
+                      <a href="#" onClick={handleSignIn}>SIGN IN</a>
+                      <span className="linea_bajo_nom"></span>
+                    </li>
+                    <li className={isSignUp ? 'active' : ''}>
+                      <a href="#up" onClick={handleSignUp}>SIGN UP</a>
+                      <span className="linea_bajo_nom"></span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="cont_text_inputs">
+                  {isSignUp && <input type="text" className={`input_form_sign ${isActive ? 'active_inp' : ''}`} placeholder="NAME" name="name_us" />}
+                  <input type="text" className={`input_form_sign d_block ${isActive ? 'active_inp' : ''}`} placeholder="EMAIL" name="email_us" value={email} onChange={(e) => setEmail(e.target.value)} />
+                  <input type="password" className={`input_form_sign d_block ${isActive ? 'active_inp' : ''}`} placeholder="PASSWORD" name="pass_us" value={password} onChange={(e) => setPassword(e.target.value)} />
+                  {isSignUp && <input type="password" className={`input_form_sign ${isActive ? 'active_inp' : ''}`} placeholder="CONFIRM PASSWORD" name="conf_pass_us" />}
+                  
+                  <Form.Group className="mb-3" controlId="formPhoneNumber">
+                    <Form.Label>Phone Number</Form.Label>
+                    <Form.Control
+                      type="text"
+                      placeholder="Enter phone number"
+                      value={phoneNumber}
+                      onChange={(e) => setPhoneNumber(e.target.value)}
+                    />
+                    <Button variant="secondary" onClick={handleSendOtp}>
+                      Send OTP
+                    </Button>
+                  </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </Form.Group>
+                  {isOtpSent && (
+                    <Form.Group className="mb-3" controlId="formOtp">
+                      <Form.Label>Enter OTP</Form.Label>
+                      <Form.Control
+                        type="text"
+                        placeholder="Enter OTP"
+                        value={otp}
+                        onChange={(e) => setOtp(e.target.value)}
+                      />
+                      <Button variant="secondary" onClick={handleVerifyOtp}>
+                        Verify OTP
+                      </Button>
+                    </Form.Group>
+                  )}
 
-          <Form.Group className="mb-3" controlId="formPhoneNumber">
-            <Form.Label>Phone Number</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter phone number"
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
-            />
-            <Button variant="secondary" onClick={handleSendOtp}>
-              Send OTP
-            </Button>
-          </Form.Group>
+                  {!isSignUp && <a href="#" className={`link_forgot_pass d_block ${isActive ? '' : 'd_none'}`}>Forgot Password?</a>}
 
-          {isOtpSent && (
-            <Form.Group className="mb-3" controlId="formOtp">
-              <Form.Label>Enter OTP</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter OTP"
-                value={otp}
-                onChange={(e) => setOtp(e.target.value)}
-              />
-              <Button variant="secondary" onClick={handleVerifyOtp}>
-                Verify OTP
-              </Button>
-            </Form.Group>
-          )}
+                  <Form.Group className="mb-3" controlId="formRole">
+                    <Form.Label>Role</Form.Label>
+                    <Form.Control
+                      as="select"
+                      value={role}
+                      onChange={(e) => setRole(e.target.value)}
+                    >
+                      <option value="guest">Guest</option>
+                      <option value="champ">Member</option>
+                  
+                    </Form.Control>
+                  </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formRole">
-            <Form.Label>Role</Form.Label>
-            <Form.Control
-              as="select"
-              value={role}
-              onChange={(e) => setRole(e.target.value)}
-            >
-              <option value="guest">Guest</option>
-              <option value="champ">Champ</option>
-              <option value="coach">Coach</option>
-            </Form.Control>
-          </Form.Group>
-
-          <Button variant="success" type="submit">
-            Login
-          </Button>
-          <a className='align-center' href='#'>Forgot Password ?</a>
+                  <div className="cont_btn">
+                    <button className="btn_sign" type="submit">{isSignUp ? 'SIGN UP' : 'SIGN IN'}</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </Form>
       </Modal.Body>
     </Modal>

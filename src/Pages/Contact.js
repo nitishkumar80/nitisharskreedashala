@@ -112,7 +112,10 @@ const Contact = () => {
                   <p className="contact-description">
                     <strong>Feel Free to contact us any time.</strong> Let's Discuss Your Project & Ideas.
                   </p>
-                  <form onSubmit={onSubmit} className="contact-form">
+                  <form   action="https://api.web3forms.com/submit" method="POST"  className="contact-form">
+                   
+                  <input type="hidden" name="access_key" value="d8154708-9cc5-4b70-9789-6f7f765b0a77"/>
+                   
                     <input 
                       type="text"
                       className="form-control form-group"

@@ -14,6 +14,9 @@ import Membership from '../Pages/Membership';
 import MembershipDetail from '../Pages/MembershipDetail';
 import "../Pages/CSS/NavBar.css";
 
+
+
+
 // Popup Form Components
 import LoginForm from '../Pages/LoginForm';
 import RegisterForm from '../Pages/RegisterForm';
@@ -21,6 +24,11 @@ import ProfileCreationForm from '../Pages/ProfileCreationForm';
 import CoachAdmissionForm from '../Pages/CoachAdmissionForm';
 import ChampAdmissionForm from '../Pages/ChampAdmissionForm';
 import LearnMore from '../Pages/LearnMore';
+import Coach from '../Pages/Coach';
+import MemberForm from '../Pages/Registration/MemberForm';
+import GuestForm from '../Pages/Registration/GuestForm';
+import CoachForm from '../Pages/Registration/CoachForm';
+
 
 export default function NavBar() {
   const [showLogin, setShowLogin] = useState(false);
@@ -123,6 +131,12 @@ export default function NavBar() {
         <Route path="/login" element={<Login />} />
         <Route path="/create-profile" element={< ProfileCreationForm />} />
         <Route path="/learn-more" element={<LearnMore />} />
+        <Route path="/" element={<RegisterForm/>} />
+
+        <Route path="/member" element={<MemberForm/>} />
+        <Route path="/coach" element={<CoachForm/>} />
+        <Route path="/guest" element={<GuestForm/>} />
+
         
       </Routes>
 
