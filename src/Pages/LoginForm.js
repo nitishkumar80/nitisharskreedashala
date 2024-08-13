@@ -13,6 +13,7 @@ const LoginForm = ({ onClose }) => {
   const [isOtpSent, setIsOtpSent] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [role, setRole] = useState('guest');
   const navigate = useNavigate();
 
@@ -37,15 +38,27 @@ const LoginForm = ({ onClose }) => {
   const resetForm = () => {
     setEmail('');
     setPassword('');
+    setConfirmPassword('');
     setPhoneNumber('');
     setOtp('');
     setIsOtpSent(false);
   };
 
   const validateForm = () => {
-    if (!email || !password || (isSignUp && (!phoneNumber || !otp))) {
-      toast.error("Please fill in all required fields!");
-      return false;
+    if (isSignUp) {
+      if (!email || !password || !confirmPassword || !phoneNumber || !otp) {
+        toast.error("Please fill in all required fields!");
+        return false;
+      }
+      if (password !== confirmPassword) {
+        toast.error("Passwords do not match!");
+        return false;
+      }
+    } else {
+      if (!email || !password ||!phoneNumber) {
+        toast.error("Please fill in all fields before signing in.");
+        return false;
+      }
     }
     return true;
   };
@@ -112,7 +125,7 @@ const LoginForm = ({ onClose }) => {
                     {isSignUp && <input type="text" className={`input_form_sign ${isActive ? 'active_inp' : ''}`} placeholder="NAME" name="name_us" />}
                     <input type="text" className={`input_form_sign d_block ${isActive ? 'active_inp' : ''}`} placeholder="EMAIL" name="email_us" value={email} onChange={(e) => setEmail(e.target.value)} />
                     <input type="password" className={`input_form_sign d_block ${isActive ? 'active_inp' : ''}`} placeholder="PASSWORD" name="pass_us" value={password} onChange={(e) => setPassword(e.target.value)} />
-                    {isSignUp && <input type="password" className={`input_form_sign ${isActive ? 'active_inp' : ''}`} placeholder="CONFIRM PASSWORD" name="conf_pass_us" />}
+                    {isSignUp && <input type="password" className={`input_form_sign ${isActive ? 'active_inp' : ''}`} placeholder="CONFIRM PASSWORD" name="conf_pass_us" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />}
                     
                     <Form.Group className="mb-3" controlId="formPhoneNumber">
                       <Form.Label>Phone Number</Form.Label>
