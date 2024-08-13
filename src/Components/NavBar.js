@@ -7,7 +7,7 @@ import Service from '../Pages/Service';
 import ServiceDetail from '../Pages/ServiceDetails';
 import logo from "../Images/main/newww.png";
 import { Navbar, Container, Nav, Button, NavDropdown } from 'react-bootstrap';
-import Login from '../Pages/login';
+
 import BookingForm from '../Pages/BookingForm';
 import Footer from '../Pages/Footer';
 import Membership from '../Pages/Membership';
@@ -128,7 +128,7 @@ export default function NavBar() {
         <Route path="/member/:id" element={<MembershipDetail />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/bookingform/:type" element={<BookingForm />} />
-        <Route path="/login" element={<Login />} />
+        {/* <Route path="/login" element={<Login />} /> */}
         <Route path="/create-profile" element={< ProfileCreationForm />} />
         <Route path="/learn-more" element={<LearnMore />} />
         <Route path="/" element={<RegisterForm/>} />
