@@ -66,7 +66,7 @@ const Home = () => {
               className="text-content"
             >
               <h1 className="title-heading">
-                Welcome to <span>Kreedashala</span>
+                Welcome to <span> <strong>Ars</strong>Kreedashala</span>
               </h1>
               <p>Future of Sport Training</p>
               <button className="btn btn-primary">Register now</button>

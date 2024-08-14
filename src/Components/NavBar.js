@@ -1,38 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Link, NavLink } from 'react-router-dom';
+import { Navbar, Container, Nav, Button, NavDropdown } from 'react-bootstrap';
+import logo from "../Images/main/newww.png";
 import About from '../Pages/About';
 import Home from '../Pages/Home';
 import Contact from '../Pages/Contact';
 import Service from '../Pages/Service';
 import ServiceDetail from '../Pages/ServiceDetails';
-import logo from "../Images/main/newww.png";
-import { Navbar, Container, Nav, Button, NavDropdown } from 'react-bootstrap';
-
 import BookingForm from '../Pages/BookingForm';
-import Footer from '../Pages/Footer';
 import Membership from '../Pages/Membership';
 import MembershipDetail from '../Pages/MembershipDetail';
 import "../Pages/CSS/NavBar.css";
-
-
-
-
-// Popup Form Components
 import LoginForm from '../Pages/LoginForm';
 import RegisterForm from '../Pages/RegisterForm';
 import ProfileCreationForm from '../Pages/ProfileCreationForm';
 import CoachAdmissionForm from '../Pages/CoachAdmissionForm';
 import ChampAdmissionForm from '../Pages/ChampAdmissionForm';
 import LearnMore from '../Pages/LearnMore';
-import Coach from '../Pages/Coach';
 import MemberForm from '../Pages/Registration/MemberForm';
 import GuestForm from '../Pages/Registration/GuestForm';
 import CoachForm from '../Pages/Registration/CoachForm';
 
-
 export default function NavBar() {
-  const [showLogin, setShowLogin] = useState(false);
-  const [showRegister, setShowRegister] = useState(false);
+  const [showLogin, setShowLogin] = useState(true); // Show LoginForm by default
+  const [showRegister, setShowRegister] = useState(false); // Don't show RegisterForm by default
   const [showCoachAdmission, setShowCoachAdmission] = useState(false);
   const [showChampAdmission, setShowChampAdmission] = useState(false);
 
@@ -49,8 +40,8 @@ export default function NavBar() {
   const handleChampAdmissionShow = () => setShowChampAdmission(true);
 
   useEffect(() => {
+    // Close navbar when clicking a link
     const navLinks = document.querySelectorAll('.nav-link a');
-
     const handleClick = () => {
       const navBarToggle = document.querySelector('.navbar-collapse');
       if (navBarToggle.classList.contains('show')) {
@@ -128,16 +119,12 @@ export default function NavBar() {
         <Route path="/member/:id" element={<MembershipDetail />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/bookingform/:type" element={<BookingForm />} />
-        {/* <Route path="/login" element={<Login />} /> */}
-        <Route path="/create-profile" element={< ProfileCreationForm />} />
+        <Route path="/create-profile" element={<ProfileCreationForm />} />
         <Route path="/learn-more" element={<LearnMore />} />
-        <Route path="/" element={<RegisterForm/>} />
-
-        <Route path="/member" element={<MemberForm/>} />
-        <Route path="/coach" element={<CoachForm/>} />
-        <Route path="/guest" element={<GuestForm/>} />
-
-        
+        <Route path="/" element={<Home />} />
+        <Route path="/member" element={<MemberForm />} />
+        <Route path="/coach" element={<CoachForm />} />
+        <Route path="/guest" element={<GuestForm />} />
       </Routes>
 
       {/* Popup Forms */}
@@ -145,7 +132,6 @@ export default function NavBar() {
       {showRegister && <RegisterForm onClose={handleRegisterClose} />}
       {showCoachAdmission && <CoachAdmissionForm onClose={handleCoachAdmissionClose} />}
       {showChampAdmission && <ChampAdmissionForm onClose={handleChampAdmissionClose} />}
-      {/* <Footer /> */}
     </BrowserRouter>
   );
 }

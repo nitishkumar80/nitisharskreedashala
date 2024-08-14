@@ -1,27 +1,36 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import aboutImg from "../assets/about.png";
-import founder1 from "../assets/Founder1.png";
-import founder2 from "../assets/Founder2.png";
-import founder3 from "../assets/Founder3.png";
-// motion
-import { motion } from "framer-motion";
-// variants
-import { fadeIn } from "../variants";
-
-// Import Lottie
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import aboutImg from '../assets/about.png';
+import founder1 from '../assets/Founder1.png';
+import founder2 from '../assets/Founder2.png';
+import founder3 from '../assets/Founder3.png';
+import { motion } from 'framer-motion';
+import { fadeIn } from '../variants';
 import Lottie from 'lottie-react';
-import aboutAnimation from "../LottieAnimation/about.json"; // Update path as needed
-
-// Import CSS
+import aboutAnimation from '../LottieAnimation/about.json';
+import Loader from './Loader'; // Import the Loader component
 import './CSS/About.css';
 
 const About = () => {
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000); // Adjust this delay as needed
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleLearnMore = () => {
     navigate('/learn-more');
   };
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <div className="about-container">

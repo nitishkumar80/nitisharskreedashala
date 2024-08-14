@@ -4082,7 +4082,7 @@ __metadata:
     flowbite-react: ^0.10.1
     framer-motion: ^11.3.21
     jspdf: ^2.5.1
-    lottie-react: ^2.4.0
+    lottie-react: latest
     lottie-web: ^5.12.2
     react: ^18.3.1
     react-bootstrap: ^2.5.0
@@ -9424,7 +9424,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lottie-react@npm:^2.4.0":
+"lottie-react@npm:latest":
   version: 2.4.0
   resolution: "lottie-react@npm:2.4.0"
   dependencies:
