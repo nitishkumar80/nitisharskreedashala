@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Reggae+One&family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Croissant+One&display=swap');
+
+
 body {
   font-family: "Titillium Web", sans-serif;
 }
@@ -14,14 +19,15 @@ body {
   flex-direction: column;
   background-color: #f9fafb;
   align-items: center;
-  color: #0a0909; /* Ensure text is readable on background image */
+  color: #0a0909; 
 }
 
 .service-title {
-  font-family: "Titillium Web", sans-serif;
+  font-family: "Rock Salt", cursive;
   font-size: 2rem;
   margin-top: 110px;
-  color: #ff8000;
+  color: orange;
+  font-weight: bold;
 }
 
 .service-cards {
@@ -30,6 +36,7 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
   gap: 30px;
   width: 100%;
+  max-width: 1200px; 
 }
 
 .service-card-wrapper {
@@ -38,12 +45,14 @@ body {
 }
 
 .service-card {
-  background: #ffffff; /* White background to make it stand out */
+  background: #ffffff; 
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.2s ease;
   text-align: center;
+  width: 100%; 
+  max-width: 350px; 
 }
 
 .service-card:hover {
@@ -59,7 +68,9 @@ body {
   color: #ff8000;
   margin: 10px 0;
   text-align: center;
-  font-family: "Titillium Web", sans-serif;
+  font-family: "Permanent Marker", cursive;
+
+
 }
 
 .service-description {
@@ -68,10 +79,53 @@ body {
   text-align: justify;
   text-justify: inter-word;
   text-align: center;
-  font-family: "Titillium Web", sans-serif;
+  color: #0a0909;
+  font-family: "Sirin Stencil", sans-serif;
 }
 
 .service-card-link {
-  text-decoration: none; /* Remove underline */
-  color: inherit; /* Use the color from parent */
+  text-decoration: none; 
+  color: inherit; 
+}
+
+@media (max-width: 768px) {
+  .service-title {
+    font-size: 1.8rem;
+  }
+
+  .service-cards {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .service-card {
+    max-width: 100%; 
+  }
+
+  .service-card-title {
+    font-size: 1.4rem;
+  }
+
+  .service-description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-title {
+    font-size: 1.5rem;
+    margin-top: 90px;
+  }
+
+  .service-card {
+    max-width: 100%; 
+  }
+
+  .service-card-title {
+    font-size: 1.2rem;
+  }
+
+  .service-description {
+    font-size: 0.8rem;
+  }
 }

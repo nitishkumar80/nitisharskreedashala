@@ -97,10 +97,10 @@ export default function NavBar() {
                   Contact
                 </NavLink>
               </Nav.Link>
-              <NavDropdown title="Admission" id="basic-nav-dropdown">
+              {/* <NavDropdown title="Admission" id="basic-nav-dropdown">
                 <NavDropdown.Item onClick={handleCoachAdmissionShow}>Coach</NavDropdown.Item>
                 <NavDropdown.Item onClick={handleChampAdmissionShow}>Champ</NavDropdown.Item>
-              </NavDropdown>
+              </NavDropdown> */}
             </Nav>
             <Nav className='ms-auto'>
               <Button variant="outline-success" onClick={handleLoginShow}>Login</Button>

@@ -1,7 +1,5 @@
-/* Contact.css */
 @import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Aladin&family=Sirin+Stencil&display=swap');
-
 
 .bg {
   position: relative;
@@ -20,12 +18,15 @@
   align-items: center;
   justify-content: center;
   z-index: 1;
+  padding: 20px;
 }
 
 .lottie-container {
   display: flex;
   justify-content: center;
   align-items: center;
+ 
+  width: 100%;
 }
 
 .contact_inner {
@@ -33,26 +34,31 @@
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .contact-title {
   font-size: 2rem;
-  
   font-family: "Rock Salt", cursive;
   margin-bottom: 15px;
   color: #007bff;
-
+  text-align: center;
 }
 
 .contact-description {
   margin-bottom: 25px;
   font-size: 1rem;
   color: #666;
+  text-align: center;
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .form-control {
@@ -61,6 +67,8 @@
   border-radius: 4px;
   border: 1px solid #ddd;
   font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .form-group {
@@ -80,8 +88,62 @@ textarea.form-control {
   cursor: pointer;
   border-radius: 4px;
   transition: background-color 0.3s ease;
+  width: 100%;
 }
 
 .contact_form_submit:hover {
   background-color: #0056b3;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .contact_inner {
+    padding: 15px;
+  }
+
+  .contact-title {
+    font-size: 1.8rem;
+  }
+
+  .contact-description {
+    font-size: 0.9rem;
+  }
+
+  .form-control {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .contact_form_submit {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact_inner {
+    padding: 10px;
+  }
+
+  .contact-title {
+    font-size: 1.6rem;
+  }
+
+  .contact-description {
+    font-size: 0.85rem;
+  }
+
+  .form-control {
+    padding: 6px;
+    font-size: 0.85rem;
+  }
+
+  .contact_form_submit {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
+
+
+
+  
 }

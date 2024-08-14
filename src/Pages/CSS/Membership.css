@@ -1,14 +1,22 @@
-/* Membership.css */
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Reggae+One&family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Croissant+One&display=swap');
+
 .membership-container {
   padding: 2rem;
   text-align: center;
+  
 }
+
 
 .membership-title {
   font-size: 2rem;
-  font-family: "Titillium Web", sans-serif;
-  margin-bottom: 1.5rem;
+
+  font-family: "Rock Salt", cursive;
+  font-weight: bold;
+    margin-bottom: 1.5rem;
 }
 
 .membership-cards {
@@ -24,7 +32,8 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin: 1rem;
   padding: 1.5rem;
-  width: 400px;
+  width: 100%;
+  max-width: 400px; 
   transition: transform 0.3s;
 }
 
@@ -46,21 +55,22 @@
 .membership-card-title {
   font-size: 1.5rem;
   margin: 0.5rem 0;
-  font-family: "Titillium Web", sans-serif;
+  font-family: "Permanent Marker", cursive;
+  color: orange;
 }
 
 .membership-card-description {
   font-size: 1rem;
   color: #666;
-  font-family: "Titillium Web", sans-serif;
+  font-family: "Sirin Stencil", sans-serif;
   margin: 0.5rem 0;
 }
 
 .membership-card-price {
   font-size: 1.25rem;
   font-weight: bold;
-  font-family: "Titillium Web", sans-serif;
-  color: #333;
+  font-family: "Permanent Marker", cursive;
+  color:green;
   margin: 0.5rem 0;
 }
 
@@ -72,12 +82,42 @@
 
 .membership-card-durations li {
   font-size: 1rem;
-  font-family: "Titillium Web", sans-serif;
+  font-family: "Sirin Stencil", sans-serif;
   color: #333;
 }
 
 .membership-card-quote {
   font-style: italic;
-  color: #007bff;
+  color: orangered;
   margin: 1rem 0;
+
+  font-family: "Rock Salt", cursive;
+}
+
+
+@media (max-width: 768px) {
+  .membership-card {
+    width: 100%; 
+    margin: 1rem 0; 
+  }
+
+  .membership-title {
+    font-size: 1.5rem;
+  }
+
+  .membership-card-title {
+    font-size: 1.2rem;
+  }
+
+  .membership-card-description {
+    font-size: 0.9rem;
+  }
+
+  .membership-card-price {
+    font-size: 1rem;
+  }
+
+  .membership-card-durations li {
+    font-size: 0.9rem;
+  }
 }

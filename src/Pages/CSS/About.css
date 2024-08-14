@@ -1,5 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Reggae+One&family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Croissant+One&display=swap');
+
+body {
+  background-color: #f9fafb;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
 .about-container {
   padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .about-section {
@@ -8,15 +20,17 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 3rem;
+  flex-wrap: wrap; 
 }
 
 .about-image {
   flex: 1;
+  min-width: 300px;
 }
 
 .about-img {
   width: 100%;
-  
+
   margin-top: 90px;
   border-radius: 10px;
 }
@@ -24,17 +38,23 @@
 .about-text {
   flex: 1;
   padding: 0 2rem;
+  min-width: 300px; /* Ensure a minimum width for text */
 }
 
 .about-title {
   font-size: 2rem;
+  font-family: "Rock Salt", cursive;
+  color: green;
+  font-weight: bold;
   margin-bottom: 1rem;
 }
 
 .about-description {
   font-size: 1rem;
   line-height: 1.6;
-  color: #000;
+  color: black;
+  text-align: justify;
+  font-family: "Reggae One", system-ui;
 }
 
 .btn-primary {
@@ -46,6 +66,17 @@
   cursor: pointer;
 }
 
+
+.btn-success{
+  font-family: "Sirin Stencil", sans-serif;
+  font-size: 12px;
+  background-color: #007bff;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 .founders-section {
   text-align: center;
   margin-bottom: 3rem;
@@ -54,12 +85,15 @@
 .founders-title {
   font-size: 2rem;
   margin-bottom: 1rem;
+  font-family: "Reggae One", system-ui;
+  color: green;
 }
 
 .founders-images {
   display: flex;
   justify-content: center;
   gap: 1rem;
+  flex-wrap: wrap; 
 }
 
 .founder-image {
@@ -80,6 +114,7 @@
 .stats-content {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .stats-text {
@@ -97,11 +132,14 @@
 .stats-details {
   display: flex;
   gap: 2rem;
+  flex-wrap: wrap; 
 }
 
 .stats-item {
   display: flex;
   align-items: center;
+  flex: 1;
+  min-width: 150px; 
 }
 
 .stats-icon {
@@ -116,4 +154,39 @@
 
 .stats-number {
   font-size: 1.5rem;
+}
+
+
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    padding: 0;
+  }
+
+  .founders-images {
+    flex-direction: column;
+  }
+
+  .stats-content {
+    flex-direction: column;
+  }
+
+  .stats-item {
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-title, .founders-title, .stats-title {
+    font-size: 1.5rem;
+  }
+
+  .stats-number {
+    font-size: 1.2rem;
+  }
 }
