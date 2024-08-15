@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from "react";
-
+import React, { useState } from "react";
 import { send } from "emailjs-com";
 import { Container, Row } from 'react-bootstrap';
 import Lottie from "lottie-react";
-import contactAnimation from "../LottieAnimation/contact.json"; // Ensure this path is correct
+import contactAnimation from "../LottieAnimation/contact.json";
 import { motion } from "framer-motion";
-import { fadeIn } from "../variants"; // Update the path as needed
+import { fadeIn } from "../variants";
 import "./CSS/Contact.css";
-import BackgroundImage from "../assets/bg1.jpg"; // Import the background image
+import BackgroundImage from "../assets/bnb9.jpg";
 
 const Contact = () => {
   const [toSend, setToSend] = useState({
@@ -16,9 +15,6 @@ const Contact = () => {
     contact: "",
     message: "",
   });
-
-
-  
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -45,21 +41,25 @@ const Contact = () => {
   };
 
   return (
+    <div className="home-page" style={{ minHeight: '100vh', position: 'relative' }}>
+      {/* Background Image with Blur */}
+      <div
+        style={{
+          backgroundImage: `url(${BackgroundImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          filter: 'blur(8px)',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          zIndex: -1,
+        }}
+      ></div>
 
-    <div 
-    className="home-page"
-    style={{
-      backgroundImage: `url(${BackgroundImage})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-      minHeight: '100vh',
-      position: 'relative',
-    }}
-  >
-<div className="main">
-   
-
+      <div className="main">
         <Container>
           <Row>
             {/* Lottie Animation Section */}
@@ -91,9 +91,13 @@ const Contact = () => {
                   <p className="contact-description">
                     <strong>Feel Free to contact us any time.</strong> Let's Discuss Your Project & Ideas.
                   </p>
-                  <form   action="https://api.web3forms.com/submit" method="POST"  className="contact-form">
-                   
-                  <input type="hidden" name="access_key" value="d8154708-9cc5-4b70-9789-6f7f765b0a77"/>
+                  <form 
+                    action="https://api.web3forms.com/submit" 
+                    method="POST"  
+                    className="contact-form"
+                    onSubmit={onSubmit}
+                  >
+                    <input type="hidden" name="access_key" value="d8154708-9cc5-4b70-9789-6f7f765b0a77"/>
                    
                     <input 
                       type="text"
@@ -139,11 +143,8 @@ const Contact = () => {
             </div>
           </Row>
         </Container>
-     
+      </div>
     </div>
-    </div>
-
-
   );
 };
 

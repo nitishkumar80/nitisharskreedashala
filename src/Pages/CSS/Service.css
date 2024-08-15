@@ -1,18 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rock+Salt&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Reggae+One&family=Rock+Salt&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Croissant+One&display=swap');
-
-
 body {
   font-family: "Titillium Web", sans-serif;
 }
 
-
 .home-page {
-margin-top: 90px;
+  margin-top: 90px;
 }
+
 .service-container {
   padding: 20px;
   background-size: cover;
@@ -21,7 +14,6 @@ margin-top: 90px;
   min-height: auto;
   display: flex;
   flex-direction: column;
-margin-top: 19rem;
   align-items: center;
   color: #0a0909; 
 }
@@ -32,13 +24,14 @@ margin-top: 19rem;
   margin-top: 110px;
   color: orange;
   font-weight: bold;
+  text-align: center;
 }
 
 .service-cards {
   margin-top: 40px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 5rem;
   width: 100%;
   max-width: 1200px; 
 }
@@ -49,13 +42,14 @@ margin-top: 19rem;
 }
 
 .service-card {
-  background-color: #ffffff2d;
+  background-color: #ffffff8e;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.2s ease;
   text-align: center;
   width: 100%; 
+
   max-width: 350px; 
 }
 
@@ -73,15 +67,11 @@ margin-top: 19rem;
   margin: 10px 0;
   text-align: center;
   font-family: "Permanent Marker", cursive;
-
-
 }
 
 .service-description {
   font-size: 1rem;
   padding: 0 10px 10px;
-  text-align: justify;
-  text-justify: inter-word;
   text-align: center;
   color: #0a0909;
   font-family: "Sirin Stencil", sans-serif;
@@ -92,18 +82,15 @@ margin-top: 19rem;
   color: inherit; 
 }
 
+/* Responsive styles for tablets */
 @media (max-width: 768px) {
   .service-title {
     font-size: 1.8rem;
   }
 
   .service-cards {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-  }
-
-  .service-card {
-    max-width: 100%; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
   }
 
   .service-card-title {
@@ -115,10 +102,16 @@ margin-top: 19rem;
   }
 }
 
+/* Responsive styles for mobile devices */
 @media (max-width: 480px) {
   .service-title {
     font-size: 1.5rem;
     margin-top: 90px;
+  }
+
+  .service-cards {
+    grid-template-columns: 1fr; /* Single column layout for small screens */
+    gap: 10px;
   }
 
   .service-card {

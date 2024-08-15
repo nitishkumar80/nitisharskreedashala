@@ -1,6 +1,3 @@
-
-
-
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -13,7 +10,7 @@ import swimmingAnimation from '../LottieAnimation/running.json';
 import cricketAnimation from '../LottieAnimation/Weightlifting.json';
 import './CSS/Membership.css';
 import Loader from '../Pages/Loader'; // Import the Loader component
-import BackgroundImage from "../assets/bg1.jpg"; // Import the background image
+import BackgroundImage from "../assets/bn5.jpg"; // Import the background image
 
 const membershipPlans = [
   {
@@ -53,8 +50,6 @@ const cardVariants = {
 const Membership = () => {
   const [loading, setLoading] = useState(true);
 
-
-  
   useEffect(() => {
     // Simulate loading time
     const timer = setTimeout(() => {
@@ -64,61 +59,73 @@ const Membership = () => {
     return () => clearTimeout(timer);
   }, []);
 
-
   if (loading) {
     return <Loader />;
   }
 
-
-
   return (
     <div 
-    className="home-page"
-    style={{
-      backgroundImage: `url(${BackgroundImage})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-      minHeight: '100vh',
-      position: 'relative',
-      overflow:'hidden',
-    }}
-  >
-    <div className="membership-container">
-      <Fade top>
-        <h1 className="membership-title">Membership Plans</h1>
-      </Fade>
-      <div className="membership-cards">
-        {membershipPlans.map((plan) => (
-          <motion.div
-            key={plan.id}
-            className="membership-card"
-            initial="hidden"
-            animate="visible"
-            variants={cardVariants}
-            transition={{ duration: 0.5, delay: plan.id * 0.2 }}
-          >
-            <Link to={`/member/${plan.id}`} className="membership-card-link">
-              <div className="membership-card-content">
-                <div className="animation-container">
-                  <LottieAnimation animationData={plan.animation} size={100} />
+      className="home-page"
+      style={{
+        position: 'relative',
+        minHeight: '100vh',
+        overflow: 'hidden',
+      }}
+    >
+      {/* Blurred background image */}
+      <div
+        className="blurred-background"
+        style={{
+          backgroundImage: `url(${BackgroundImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          filter: 'blur(5px)',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          zIndex: -1,
+        }}
+      ></div>
+
+      {/* Membership content */}
+      <div className="membership-container">
+        <Fade top>
+          <h1 className="membership-text">Membership Plans</h1>
+        </Fade>
+        <div className="membership-cards">
+          {membershipPlans.map((plan) => (
+            <motion.div
+              key={plan.id}
+              className="membership-card"
+              initial="hidden"
+              animate="visible"
+              variants={cardVariants}
+              transition={{ duration: 0.5, delay: plan.id * 0.2 }}
+            >
+              <Link to={`/member/${plan.id}`} className="membership-card-link">
+                <div className="membership-card-content">
+                  <div className="animation-container">
+                    <LottieAnimation animationData={plan.animation} size={100} />
+                  </div>
+                  <h2 className="membership-card-title">{plan.title}</h2>
+                  <p className="membership-card-description">{plan.description}</p>
+                  <p className="membership-card-price">{plan.price}</p>
+                  <ul className="membership-card-durations">
+                    {plan.durations.map((duration, index) => (
+                      <li key={index}>{duration}</li>
+                    ))}
+                  </ul>
+                  <blockquote className="membership-card-quote">
+                    "{plan.quote}"
+                  </blockquote>
                 </div>
-                <h2 className="membership-card-title">{plan.title}</h2>
-                <p className="membership-card-description">{plan.description}</p>
-                <p className="membership-card-price">{plan.price}</p>
-                <ul className="membership-card-durations">
-                  {plan.durations.map((duration, index) => (
-                    <li key={index}>{duration}</li>
-                  ))}
-                </ul>
-                <blockquote className="membership-card-quote">
-                  "{plan.quote}"
-                </blockquote>
-              </div>
-            </Link>
-          </motion.div>
-        ))}
-      </div>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   );

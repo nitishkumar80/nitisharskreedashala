@@ -11,12 +11,12 @@
 }
 
 
-.membership-title {
-  font-size: 2rem;
 
-  font-family: "Rock Salt", cursive;
+.membership-text{
+  color: green;
   font-weight: bold;
-    margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-family: "Rock Salt", cursive;
 }
 
 .membership-cards {
@@ -26,7 +26,7 @@
 }
 
 .membership-card {
-  background-color: #ffffff2d;
+  background-color: #ffffffce;
   border: 1px solid #2c07ff38;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

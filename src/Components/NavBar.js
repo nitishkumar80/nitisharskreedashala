@@ -71,7 +71,7 @@ export default function NavBar() {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className='me-auto'>
+            <Nav className='nav-text'>
               <Nav.Link>
                 <NavLink to="/Home" className={({ isActive }) => isActive ? 'active' : undefined}>
                   Home

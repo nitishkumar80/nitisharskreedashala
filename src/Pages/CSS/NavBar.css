@@ -12,6 +12,11 @@
   font-family: "Sirin Stencil", sans-serif;
 }
 
+
+.nav-text{
+  margin:auto;
+}
+
 /* Adjust the logo size and add margin */
 .BrandLogo {
   width: 150px; /* Adjust size as needed */
