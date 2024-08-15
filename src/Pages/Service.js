@@ -74,6 +74,7 @@ const Service = () => {
           backgroundImage: `url(${BackgroundImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
+          backgroundAttachment: 'fixed', 
           backgroundRepeat: 'no-repeat',
           filter: 'blur(8px)',
           position: 'absolute',

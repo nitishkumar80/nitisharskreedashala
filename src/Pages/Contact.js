@@ -41,7 +41,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="home-page" style={{ minHeight: '100vh', position: 'relative' }}>
+    <div className="home-page" style={{ minHeight: '100vh'}}>
       {/* Background Image with Blur */}
       <div
         style={{
@@ -49,6 +49,7 @@ const Contact = () => {
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed', 
           filter: 'blur(8px)',
           position: 'absolute',
           top: 0,

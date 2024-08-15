@@ -68,7 +68,7 @@ const Membership = () => {
       className="home-page"
       style={{
         position: 'relative',
-        minHeight: '100vh',
+  
         overflow: 'hidden',
       }}
     >
@@ -87,6 +87,7 @@ const Membership = () => {
           right: 0,
           bottom: 0,
           zIndex: -1,
+          backgroundAttachment: 'fixed', 
         }}
       ></div>
 

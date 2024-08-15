@@ -38,6 +38,7 @@ const About = () => {
           backgroundRepeat: 'no-repeat',
           filter: 'blur(8px)',
           position: 'absolute',
+          backgroundAttachment: 'fixed', 
           top: 0,
           left: 0,
           right: 0,

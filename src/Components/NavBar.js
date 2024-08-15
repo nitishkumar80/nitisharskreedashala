@@ -20,6 +20,7 @@ import LearnMore from '../Pages/LearnMore';
 import MemberForm from '../Pages/Registration/MemberForm';
 import GuestForm from '../Pages/Registration/GuestForm';
 import CoachForm from '../Pages/Registration/CoachForm';
+import AdmissionForm from '../Pages/AdmissionForm';
 
 export default function NavBar() {
   const [showLogin, setShowLogin] = useState(true); // Show LoginForm by default
@@ -125,6 +126,9 @@ export default function NavBar() {
         <Route path="/member" element={<MemberForm />} />
         <Route path="/coach" element={<CoachForm />} />
         <Route path="/guest" element={<GuestForm />} />
+        <Route path="/AdmissionForm" element={< AdmissionForm/>} />
+
+
       </Routes>
 
       {/* Popup Forms */}
