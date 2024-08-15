@@ -103,7 +103,7 @@ const AdmissionForm = () => {
               onChange={handleChange}
               required
             >
-              <option value="">Select Course</option>
+              <option value="">Select Sports</option>
               <option value="Football">Football</option>
               <option value="Cricket">Cricket</option>
               <option value="Badminton">Badminton</option>
