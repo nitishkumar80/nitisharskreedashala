@@ -95,7 +95,7 @@ const AdmissionForm = () => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="course">Course:</label>
+            <label htmlFor="course">Sports:</label>
             <select
               id="course"
               name="course"
