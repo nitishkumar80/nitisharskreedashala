@@ -10,13 +10,13 @@ const TypingEffect = () => {
     })
     return (
       <div className="container">
-        <h2 className="text-tile">
+        <h2 className="text-ars">
            ARS KREEDASHALA
         </h2>
         <h4 className="admission-text">
           Admission Going On
         </h4>
-        <div className="">
+        <div className="typing">
           <span>{texts}</span>
           <Cursor cursorStyle="." cursorColor="white" />
         </div>
