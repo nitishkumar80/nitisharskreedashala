@@ -69,6 +69,7 @@ const Service = () => {
       backgroundRepeat: 'no-repeat',
       minHeight: '100vh',
       position: 'relative',
+      
     }}
   >
     <div 

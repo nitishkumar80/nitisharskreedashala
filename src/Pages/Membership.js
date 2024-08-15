@@ -11,7 +11,7 @@ import yogaAnimation from '../LottieAnimation/yoga.json';
 import badmintonAnimation from '../LottieAnimation/baisic.json';
 import swimmingAnimation from '../LottieAnimation/running.json';
 import cricketAnimation from '../LottieAnimation/Weightlifting.json';
-
+import './CSS/Membership.css';
 import Loader from '../Pages/Loader'; // Import the Loader component
 import BackgroundImage from "../assets/bg1.jpg"; // Import the background image
 
@@ -79,9 +79,9 @@ const Membership = () => {
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
-      overflow:'hidden',
       minHeight: '100vh',
       position: 'relative',
+      overflow:'hidden',
     }}
   >
     <div className="membership-container">

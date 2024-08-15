@@ -1,0 +1,80 @@
+/* TypingEffect.css */
+.container {
+    text-align: left;
+    padding: 20px;
+    color: white;
+    max-width: 600px;
+    margin: auto;
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  .text-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    white-space: nowrap; /* Ensures the text stays on one line */
+    overflow: hidden; 
+    border-right: 0.15em solid orange; /* Typewriter cursor effect */
+    animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+  
+  .admission-text {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    animation: fadeInUp 1.5s ease-in-out;
+  }
+  
+  .container span {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #f39c12;
+    display: inline-block;
+    animation: pulse 2s infinite;
+  }
+  
+  .container p {
+    margin: 20px 0;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .btn-text {
+    background-color: #d35400;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-text:hover {
+    background-color: #d35400;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: orange; }
+  }
+  
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+  

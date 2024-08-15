@@ -1,220 +1,73 @@
-@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Aladin&family=Sirin+Stencil&display=swap');
-
-
-
-
-.carousel-container {
-  width: 100%;
-  height: 100vh; /* Full height of the viewport */
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
-
+/* Home.css */
 
 .home-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
   position: relative;
-  width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 }
 
-strong{
-  color: rgb(248, 93, 4);
-}
-
-
-
-.carousel-container {
-  position: relative;
-  z-index: 1; /* Ensures the carousel is above the Vanta background */
-}
-
-.home-container {
-  position: relative;
-  z-index: 1; /* Ensures other content is above the Vanta background */
-}
-
-.vanta-background {
+.hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* Ensures the Vanta background is behind all content */
+  background-color: rgba(0, 0, 0, 0.548); /* Adjust the opacity as needed */
+  z-index: 1;
 }
 
-.slide-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-  height: 100%; /* Full height of the carousel */
-}
-
-.text-content {
-  flex: 1;
-  margin-right: 20px;
-  color: #000000;
-}
-
-.title-heading {
-  font-family: "Rock Salt", cursive;
-  font-size: 5rem; /* Increase font size */
-  color: #ff6a06; /* Change text color */
-  margin-bottom: 1rem;
-}
-
-
-
-.title-heading span {
-  color: #000000; /* Change span color */
-}
-
-p {
-  font-size: 2.5rem; /* Increase font size */
-  margin-bottom: 1rem;
-  color: rgb(247, 247, 247);
-  font-family: "Sirin Stencil", sans-serif;
-}
-
-.btn-primary {
-  padding: 10px 20px;
-  font-size: 1.2rem; /* Increase font size */
-  font-family: "Sirin Stencil", sans-serif;
-}
-
-
-.image-content {
-  flex: 1;
+.hero-content {
+  position: relative;
+  z-index: 2;
   display: flex;
   justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
-.image-content img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain; /* Ensure image fits within its container */
-}
-
-@media (max-width: 768px) {
-  .slide-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .text-content {
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
-
-  .title-heading {
-    font-family: "Titillium Web", sans-serif;
-    font-size: 2rem;
-  }
-
-  p {
-    font-size: 1.2rem;
-  }
-
-  .btn-primary {
-    font-size: 1rem;
-    font-family: "Titillium Web", sans-serif;
-  }
-}
-
-.home-container {
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
 
-.product-features {
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.grid > div {
   display: flex;
-  flex-direction: row;
-  margin-top: 90px;
-  gap: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
-.product-features__feature {
-  position: relative;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-  overflow: hidden; /* Hide the image initially */
-  transition: transform 0.3s ease;
+.typing-effect-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.product-features__feature:hover {
-  transform: scale(1.05);
+.image-slide-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.product-feature__box {
-  flex: 1;
-  padding: 20px;
-}
-
-.bordered-box {
-  border: 2px solid #ddd;
-  padding: 20px;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-}
-
-
-
-.para{
-  font-family: "Sirin Stencil", sans-serif;
-}
-.heading--size5 {
-  font-size: 1.5rem;
-  font-family: "Sirin Stencil", sans-serif;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-
-.product-features__feature {
-  position: relative;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-  overflow: visible; /* Allow the image to be visible outside the card */
-  transition: transform 0.3s ease;
-}
-
-.product-feature__image {
-  position: absolute;
-  bottom: -100%; /* Initially hide the image by placing it below the container */
-  left: 50%; /* Center the image horizontally */
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  transform: translate(-50%, 0); /* Center the image horizontally */
-  border-radius: 8px;
-  transition: transform 0.3s ease, bottom 0.3s ease, left 0.3s ease;
-}
-
-.product-features__feature:hover .product-feature__image {
- /* Move the image to the top of the container */
-  left: 50%; /* Ensure the image stays centered horizontally */
-  transform: translate(-50%, -120%); /* Position the image above the card */
-}
-
-
-
-
-.product-feature__attribution {
-  font-family: "Sirin Stencil", sans-serif;
-  font-size: 0.9rem;
-  color: #888;
-  margin-top: 10px;
-}
-
-.home-title {
-  color: #ff6a06;
-  font-family: "Rock Salt", cursive;
-  font-size: 80px;
+@media (max-width: 767px) {
+  .typing-effect-container,
+  .image-slide-container {
+    justify-content: center;
+    text-align: center;
+  }
 }

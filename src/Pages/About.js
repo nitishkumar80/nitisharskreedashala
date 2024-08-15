@@ -79,7 +79,7 @@ const About = () => {
           </p>
           <button className="btn-success" onClick={handleLearnMore}>Learn More</button>
         </motion.div>
-      </div>
+    
 
       {/* founder images */}
       <div className="founders-section">
@@ -128,7 +128,7 @@ const About = () => {
           </motion.div>
         </div>
       </div>
-
+      </div>
       {/* company stats */}
       <motion.div
         variants={fadeIn("up", 0.2)}
