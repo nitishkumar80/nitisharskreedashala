@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import NET from "vanta/dist/vanta.waves.min";
+
 import { send } from "emailjs-com";
 import { Container, Row } from 'react-bootstrap';
 import Lottie from "lottie-react";
@@ -7,6 +7,7 @@ import contactAnimation from "../LottieAnimation/contact.json"; // Ensure this p
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants"; // Update the path as needed
 import "./CSS/Contact.css";
+import BackgroundImage from "../assets/bg1.jpg"; // Import the background image
 
 const Contact = () => {
   const [toSend, setToSend] = useState({
@@ -16,39 +17,8 @@ const Contact = () => {
     message: "",
   });
 
-  useEffect(() => {
-    // Load Three.js dynamically
-    const loadThreeJS = new Promise((resolve) => {
-      const script = document.createElement("script");
-      script.src = "https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"; // CDN link for Three.js
-      script.onload = () => resolve();
-      script.onerror = () => console.error("Failed to load Three.js");
-      document.body.appendChild(script);
-    });
 
-    // Load Vanta.js after Three.js is loaded
-    loadThreeJS.then(() => {
-      const vantaEffect = NET({
-        el: "#vanta",
-        THREE: window.THREE, // Pass Three.js to Vanta
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        scale: 1.00,
-        scaleMobile: 1.00,
-       
-      });
-
-      // Cleanup effect on component unmount
-      return () => {
-        if (vantaEffect) vantaEffect.destroy();
-      };
-    }).catch((error) => {
-      console.error("Failed to load Vanta.js", error);
-    });
-  }, []);
+  
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -75,12 +45,21 @@ const Contact = () => {
   };
 
   return (
-    <div>
-      <div className="bg" id="vanta" style={{ width: "100%", height: "100vh", position: "relative" }}>
-        {/* Vanta.js effect will be applied to this element */}
-      </div>
 
-      <section className="contact_us" style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+    <div 
+    className="home-page"
+    style={{
+      backgroundImage: `url(${BackgroundImage})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      minHeight: '100vh',
+      position: 'relative',
+    }}
+  >
+<div className="main">
+   
+
         <Container>
           <Row>
             {/* Lottie Animation Section */}
@@ -160,8 +139,11 @@ const Contact = () => {
             </div>
           </Row>
         </Container>
-      </section>
+     
     </div>
+    </div>
+
+
   );
 };
 

@@ -10,6 +10,7 @@ import badmintonAnimation from '../LottieAnimation/badminton.json';
 import swimmingAnimation from '../LottieAnimation/swimming.json';
 import cricketAnimation from '../LottieAnimation/Cricket.json';
 import './CSS/Service.css'
+import BackgroundImage from "../assets/bg1.jpg"; // Import the background image
 
 export const servicess = [
   {
@@ -58,6 +59,18 @@ const cardVariants = {
 
 const Service = () => {
   return (
+
+    <div 
+    className="home-page"
+    style={{
+      backgroundImage: `url(${BackgroundImage})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      minHeight: '100vh',
+      position: 'relative',
+    }}
+  >
     <div 
       className="service-container" 
     
@@ -86,6 +99,7 @@ const Service = () => {
             </Link>
           </motion.div>
         ))}
+      </div>
       </div>
     </div>
   );

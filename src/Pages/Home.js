@@ -1,54 +1,29 @@
 import React, { useEffect } from "react";
 import { Carousel } from "react-responsive-carousel";
 import { motion } from "framer-motion";
-import NET from "vanta/dist/vanta.clouds2.min";
-import * as THREE from 'three'; // Import Three.js directly
+
 import Banner from "../assets/home-banner.png";
 import Banner1 from "../assets/banner5.png";
 import Banner6 from "../assets/banner6.png";
+import BackgroundImage from "../assets/bg1.jpg"; // Import the background image
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import './CSS/Home.css';
 
 const Home = () => {
-  useEffect(() => {
-    let vantaEffect;
-
-    const loadThreeJS = new Promise((resolve) => {
-      if (window.THREE) {
-        resolve();
-      } else {
-        const script = document.createElement("script");
-        script.src = "https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js";
-        script.onload = () => resolve();
-        script.onerror = () => console.error("Failed to load Three.js");
-        document.body.appendChild(script);
-      }
-    });
-
-    loadThreeJS.then(() => {
-      vantaEffect = NET({
-        el: "#vanta",
-        THREE: window.THREE || THREE,
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        scale: 1.00,
-        scaleMobile: 1.00,
-      });
-
-      return () => {
-        if (vantaEffect) vantaEffect.destroy();
-      };
-    }).catch((error) => {
-      console.error("Failed to load Vanta.js", error);
-    });
-  }, []);
 
   return (
-    <div className="home-page">
-      <div id="vanta" className="vanta-background"></div>
+    <div 
+      className="home-page"
+      style={{
+        backgroundImage: `url(${BackgroundImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        minHeight: '100vh',
+        position: 'relative',
+      }}
+    >
+
       <div className="carousel-container">
         <Carousel
           showThumbs={false}
@@ -66,7 +41,7 @@ const Home = () => {
               className="text-content"
             >
               <h1 className="title-heading">
-                Welcome to <span> <strong>Ars</strong>Kreedashala</span>
+                Welcome to <span><strong>Ars</strong>Kreedashala</span>
               </h1>
               <p>Future of Sport Training</p>
               <button className="btn btn-primary">Register now</button>
@@ -125,7 +100,7 @@ const Home = () => {
             </motion.div>
           </div>
         </Carousel>
-  
+      </div>
 
       <div className="home-container">
         <h1 className="home-title">Ars Kreedashala - Who Are We?</h1>
@@ -172,7 +147,7 @@ const Home = () => {
               </div>
               <img className="product-feature__image" src="https://static.vecteezy.com/system/resources/previews/027/189/304/non_2x/sports-school-coach-training-child-in-running-flat-vector-illustration-isolated-png.png" width="222" height="241" alt="10+ designers feature highlighted" />
               <div className="product-feature__attribution">
-                <div className="attribution">
+                <div class="attribution">
                   by Martis Lupus
                 </div>
               </div>
@@ -204,7 +179,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };

@@ -10,6 +10,7 @@ import Lottie from 'lottie-react';
 import aboutAnimation from '../LottieAnimation/about.json';
 import Loader from './Loader'; // Import the Loader component
 import './CSS/About.css';
+import BackgroundImage from "../assets/bg1.jpg"; // Import the background image
 
 const About = () => {
   const [loading, setLoading] = useState(true);
@@ -33,6 +34,18 @@ const About = () => {
   }
 
   return (
+
+    <div 
+    className="home-page"
+    style={{
+      backgroundImage: `url(${BackgroundImage})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      minHeight: '100vh',
+      position: 'relative',
+    }}
+  >
     <div className="about-container">
       {/* about section */}
       <div className="about-section">
@@ -173,6 +186,7 @@ const About = () => {
           </div>
         </div>
       </motion.div>
+    </div>
     </div>
   );
 };

@@ -13,6 +13,7 @@ import swimmingAnimation from '../LottieAnimation/running.json';
 import cricketAnimation from '../LottieAnimation/Weightlifting.json';
 import './CSS/Membership.css';
 import Loader from '../Pages/Loader'; // Import the Loader component
+import BackgroundImage from "../assets/bg1.jpg"; // Import the background image
 
 const membershipPlans = [
   {
@@ -71,6 +72,17 @@ const Membership = () => {
 
 
   return (
+    <div 
+    className="home-page"
+    style={{
+      backgroundImage: `url(${BackgroundImage})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      minHeight: '100vh',
+      position: 'relative',
+    }}
+  >
     <div className="membership-container">
       <Fade top>
         <h1 className="membership-title">Membership Plans</h1>
@@ -88,7 +100,7 @@ const Membership = () => {
             <Link to={`/member/${plan.id}`} className="membership-card-link">
               <div className="membership-card-content">
                 <div className="animation-container">
-                  <LottieAnimation animationData={plan.animation} size={200} />
+                  <LottieAnimation animationData={plan.animation} size={100} />
                 </div>
                 <h2 className="membership-card-title">{plan.title}</h2>
                 <p className="membership-card-description">{plan.description}</p>
@@ -105,6 +117,7 @@ const Membership = () => {
             </Link>
           </motion.div>
         ))}
+      </div>
       </div>
     </div>
   );
