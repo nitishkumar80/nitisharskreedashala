@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
-import NET from "vanta/dist/vanta.waves.min";
+import React, { useState } from "react";
 import { send } from "emailjs-com";
 import { Container, Row } from 'react-bootstrap';
 import Lottie from "lottie-react";
-import contactAnimation from "../LottieAnimation/contact.json"; // Ensure this path is correct
+import contactAnimation from "../LottieAnimation/contact.json";
 import { motion } from "framer-motion";
-import { fadeIn } from "../variants"; // Update the path as needed
+import { fadeIn } from "../variants";
 import "./CSS/Contact.css";
+import BackgroundImage from "../assets/bnb9.jpg";
 
 const Contact = () => {
   const [toSend, setToSend] = useState({
@@ -15,40 +15,6 @@ const Contact = () => {
     contact: "",
     message: "",
   });
-
-  useEffect(() => {
-    // Load Three.js dynamically
-    const loadThreeJS = new Promise((resolve) => {
-      const script = document.createElement("script");
-      script.src = "https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"; // CDN link for Three.js
-      script.onload = () => resolve();
-      script.onerror = () => console.error("Failed to load Three.js");
-      document.body.appendChild(script);
-    });
-
-    // Load Vanta.js after Three.js is loaded
-    loadThreeJS.then(() => {
-      const vantaEffect = NET({
-        el: "#vanta",
-        THREE: window.THREE, // Pass Three.js to Vanta
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        scale: 1.00,
-        scaleMobile: 1.00,
-       
-      });
-
-      // Cleanup effect on component unmount
-      return () => {
-        if (vantaEffect) vantaEffect.destroy();
-      };
-    }).catch((error) => {
-      console.error("Failed to load Vanta.js", error);
-    });
-  }, []);
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -75,12 +41,26 @@ const Contact = () => {
   };
 
   return (
-    <div>
-      <div className="bg" id="vanta" style={{ width: "100%", height: "100vh", position: "relative" }}>
-        {/* Vanta.js effect will be applied to this element */}
-      </div>
+    <div className="home-page" style={{ minHeight: '100vh'}}>
+      {/* Background Image with Blur */}
+      <div
+        style={{
+          backgroundImage: `url(${BackgroundImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed', 
+          filter: 'blur(8px)',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          zIndex: -1,
+        }}
+      ></div>
 
-      <section className="contact_us" style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+      <div className="main">
         <Container>
           <Row>
             {/* Lottie Animation Section */}
@@ -112,7 +92,14 @@ const Contact = () => {
                   <p className="contact-description">
                     <strong>Feel Free to contact us any time.</strong> Let's Discuss Your Project & Ideas.
                   </p>
-                  <form onSubmit={onSubmit} className="contact-form">
+                  <form 
+                    action="https://api.web3forms.com/submit" 
+                    method="POST"  
+                    className="contact-form"
+                    onSubmit={onSubmit}
+                  >
+                    <input type="hidden" name="access_key" value="d8154708-9cc5-4b70-9789-6f7f765b0a77"/>
+                   
                     <input 
                       type="text"
                       className="form-control form-group"
@@ -157,7 +144,7 @@ const Contact = () => {
             </div>
           </Row>
         </Container>
-      </section>
+      </div>
     </div>
   );
 };

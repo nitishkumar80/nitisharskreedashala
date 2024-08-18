@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Fade, Zoom } from "react-reveal";
+import { Fade } from "react-reveal";
 import LottieAnimation from '../LottieAnimation/LottieAnimation';
 
 import gymAnimation from '../LottieAnimation/jim.json';
@@ -9,7 +9,8 @@ import yogaAnimation from '../LottieAnimation/yoga.json';
 import badmintonAnimation from '../LottieAnimation/badminton.json';
 import swimmingAnimation from '../LottieAnimation/swimming.json';
 import cricketAnimation from '../LottieAnimation/Cricket.json';
-import './CSS/Service.css'
+import './CSS/Service.css';
+import BackgroundImage from "../assets/bn6.jpg"; // Import the background image
 
 export const servicess = [
   {
@@ -59,33 +60,59 @@ const cardVariants = {
 const Service = () => {
   return (
     <div 
-      className="service-container" 
-    
+      className="home-page"
+      style={{
+        position: 'relative',
+        minHeight: '100vh',
+        overflow: 'hidden',
+      }}
     >
-      <Fade top>
-        <h1 className="service-title">Our Services</h1>
-      </Fade>
-      <div className="service-cards">
-        {servicess.map((service) => (
-          <motion.div
-            key={service.id}
-            className="service-card-wrapper"
-            initial="hidden"
-            animate="visible"
-            variants={cardVariants}
-            transition={{ duration: 0.5, delay: service.id * 0.2 }}
-          >
-            <Link to={`/service/${service.id}`} className="service-card-link">
-              <div className="service-card">
-                <div className="animation-container">
-                  <LottieAnimation animationData={service.animation} size={service.size} />
+      {/* Blurred background image */}
+      <div
+        className="blurred-background"
+        style={{
+          backgroundImage: `url(${BackgroundImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed', 
+          backgroundRepeat: 'no-repeat',
+          filter: 'blur(8px)',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          zIndex: -1,
+        }}
+      ></div>
+
+      {/* Service cards content */}
+      <div className="service-container">
+        <Fade top>
+          <h1 className="service-title">Our Services</h1>
+        </Fade>
+        <div className="service-cards">
+          {servicess.map((service) => (
+            <motion.div
+              key={service.id}
+              className="service-card-wrapper"
+              initial="hidden"
+              animate="visible"
+              variants={cardVariants}
+              transition={{ duration: 0.5, delay: service.id * 0.2 }}
+            >
+              <Link to={`/service/${service.id}`} className="service-card-link">
+                <div className="service-card">
+                  <div className="animation-container">
+                    <LottieAnimation animationData={service.animation} size={service.size} />
+                  </div>
+                  <h2 className="service-card-title">{service.title}</h2>
+                  <p className="service-description">{service.description}</p>
                 </div>
-                <h2 className="service-card-title">{service.title}</h2>
-                <p className="service-description">{service.description}</p>
-              </div>
-            </Link>
-          </motion.div>
-        ))}
+              </Link>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   );

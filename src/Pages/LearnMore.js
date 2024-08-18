@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './CSS/LearnMore.css'; // Import CSS for styling
-
+import BackgroundImage from "../assets/bnb9.jpg";
 // Images
 import academyImage1 from '../assets/academy1.jpg'
 import academyImage2 from '../assets/academy1.jpg'
@@ -17,7 +17,27 @@ const fadeIn = (direction = 'up', delay = 0.1) => {
 
 const LearnMore = () => {
   return (
+
+
+
+    
     <div className="learn-more-container">
+         <div
+        style={{
+          backgroundImage: `url(${BackgroundImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed', 
+          filter: 'blur(8px)',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          zIndex: -1,
+        }}
+      ></div>
       {/* Introduction Section */}
       <section className="intro-section">
         <motion.h1
