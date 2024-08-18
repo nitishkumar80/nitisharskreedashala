@@ -7,7 +7,7 @@ import ImageSlide from "./Home/ImageSlide";
 import "./CSS/Home.css"; // Make sure to import the CSS file
 
 
-=======
+
 import Trainers from "./Trainers";
 
 
