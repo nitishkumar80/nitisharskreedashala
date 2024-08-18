@@ -11,6 +11,8 @@ import cricketAnimation from '../LottieAnimation/Weightlifting.json';
 import './CSS/Membership.css';
 import Loader from '../Pages/Loader'; // Import the Loader component
 import BackgroundImage from "../assets/bn5.jpg"; // Import the background image
+import Gallery from './Gallary';
+import Features from '../Components/Feature2';
 
 const membershipPlans = [
   {
@@ -104,6 +106,11 @@ const Membership = () => {
 
       {/* Membership content */}
       <div className="membership-container">
+
+<div>
+<Features/>
+</div>
+
         <Fade top>
           <h1 className="membership-text">Membership Plans</h1>
         </Fade>
@@ -147,7 +154,10 @@ const Membership = () => {
             </motion.div>
           ))}
         </div>
+        
       </div>
+
+
     </div>
   );
 };
