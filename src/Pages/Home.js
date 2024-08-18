@@ -5,11 +5,11 @@ import TypingEffect from "./Home/TypingEffect";
 import Trainers from "./Trainers";
 import ImageSlide from "./Home/ImageSlide";
 import "./CSS/Home.css"; // Make sure to import the CSS file
-<<<<<<< HEAD
+
 
 =======
 import Trainers from "./Trainers";
->>>>>>> 1629a7c22f5b3c1e146d63ccdffea9f3fced69ad
+
 
 const Home = () => {
   return (
