@@ -8,7 +8,7 @@ import "./CSS/Home.css"; // Make sure to import the CSS file
 
 
 
-import Trainers from "./Trainers";
+
 
 
 const Home = () => {
