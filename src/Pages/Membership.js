@@ -18,7 +18,11 @@ const membershipPlans = [
     title: "Basic",
     description: "A fast-paced racket sport that enhances agility, reflexes, and cardiovascular health.",
     price: "$50",
-    durations: ["3 months", "6 months", "12 months"],
+    durations: ["- Single Club Access",
+    "- Fitness Assessment",
+    "- Basketball Court Access",
+    "- One session with personal trainer Monthly",
+],
     animation: badmintonAnimation,
     quote: "Master the basics and elevate your game to the next level!",
   },
@@ -27,7 +31,11 @@ const membershipPlans = [
     title: "Premium",
     description: "A full-body workout that improves endurance, strength, and flexibility, offering both recreational and competitive benefits.",
     price: "$100",
-    durations: ["3 months", "6 months", "12 months"],
+    durations: ["- Begginer Amenites Included",
+    "- Unlimited Club Access",
+    "- Unlimited Group Exercise",
+    "- Unlimited Tanning",
+   " - 20% off Supplements & Drinks"],
     animation: swimmingAnimation,
     quote: "Push your limits and achieve greatness with every stroke!",
   },
@@ -36,7 +44,10 @@ const membershipPlans = [
     title: "Elite",
     description: "A team sport involving batting, bowling, and fielding, enhancing strategic thinking, coordination, and physical fitness.",
     price: "$150",
-    durations: ["3 months", "6 months", "12 months"],
+    durations: ["- All Pro Amenites Included",
+    "- Unlimited Team Training",
+    "- Monthly Progress Meating",
+    "- Personalized Eating Plan from a Certified Nutritionist"],
     animation: cricketAnimation,
     quote: "Lead your team to victory and conquer the field!",
   }
@@ -96,6 +107,15 @@ const Membership = () => {
         <Fade top>
           <h1 className="membership-text">Membership Plans</h1>
         </Fade>
+
+
+        <div>
+   
+        </div>
+
+
+
+        
         <div className="membership-cards">
           {membershipPlans.map((plan) => (
             <motion.div
