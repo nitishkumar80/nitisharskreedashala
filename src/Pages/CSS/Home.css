@@ -88,4 +88,9 @@
   .grid {
     gap: 10px;
   }
+
+   .image-slide-container{
+    position: relative;
+    right: 6.5rem;
+  }
 }
