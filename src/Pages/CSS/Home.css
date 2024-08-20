@@ -44,6 +44,11 @@
 
 
 
+
+
+
+
+
 .Trainer{
   margin-top: 160px;
 }
@@ -51,6 +56,11 @@
 .image-slide-container {
   text-align: right;
 }
+
+
+
+
+
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
@@ -87,5 +97,11 @@
 
   .grid {
     gap: 10px;
+  }
+
+
+  .image-slide-container{
+    position: relative;
+    right: 6.5rem;
   }
 }
