@@ -109,7 +109,7 @@ export default function NavBar() {
         <Route path="/Home" element={<Home />} />
         <Route path="/About" element={<About />} />
         <Route path="/Service" element={<Service />} />
-        <Route path="/service/:id/:type?" element={<ServiceDetail />} />
+        {/* <Route path="/service/:id/:type?" element={<ServiceDetail />} /> */}
         <Route path="/Membership" element={<Membership />} />
         <Route path="/member/:id" element={<MembershipDetail />} />
         <Route path="/Contact" element={<Contact />} />
