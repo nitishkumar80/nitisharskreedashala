@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Link, NavLink } from 'react-router-dom';
-import { Navbar, Container, Nav, Button, NavDropdown } from 'react-bootstrap';
+import { Navbar, Container, Nav, Button } from 'react-bootstrap';
 import logo from "../Images/main/newww.png";
-import About from '../Pages/About';
+import "../Pages/CSS/NavBar.css";
 import Home from '../Pages/Home';
+import About from '../Pages/About';
 import Contact from '../Pages/Contact';
 import Service from '../Pages/Service';
 import ServiceDetail from '../Pages/ServiceDetails';
 import BookingForm from '../Pages/BookingForm';
 import Membership from '../Pages/Membership';
 import MembershipDetail from '../Pages/MembershipDetail';
-import "../Pages/CSS/NavBar.css";
 import LoginForm from '../Pages/LoginForm';
 import RegisterForm from '../Pages/RegisterForm';
 import ProfileCreationForm from '../Pages/ProfileCreationForm';
@@ -21,12 +21,18 @@ import MemberForm from '../Pages/Registration/MemberForm';
 import GuestForm from '../Pages/Registration/GuestForm';
 import CoachForm from '../Pages/Registration/CoachForm';
 import AdmissionForm from '../Pages/AdmissionForm';
+import Cards from "../comePlay/PlayCards"
+import SportsDetail from '../comePlay/SportsDetail';
+import ConfirmationPage from "../comePlay/ConfirmationPage";
+import PaymentPage from "../comePlay/PaymentPage"
+import PlayCards from '../comePlay/PlayCards';
 
 export default function NavBar() {
-  const [showLogin, setShowLogin] = useState(true); // Show LoginForm by default
-  const [showRegister, setShowRegister] = useState(false); // Don't show RegisterForm by default
+  const [showLogin, setShowLogin] = useState(false);
+  const [showRegister, setShowRegister] = useState(false);
   const [showCoachAdmission, setShowCoachAdmission] = useState(false);
   const [showChampAdmission, setShowChampAdmission] = useState(false);
+  const [expanded, setExpanded] = useState(false); // State to manage navbar collapse
 
   const handleLoginClose = () => setShowLogin(false);
   const handleLoginShow = () => setShowLogin(true);
@@ -40,72 +46,65 @@ export default function NavBar() {
   const handleChampAdmissionClose = () => setShowChampAdmission(false);
   const handleChampAdmissionShow = () => setShowChampAdmission(true);
 
+  const closeNavbar = () => setExpanded(false); // Close navbar when a link is clicked
+
   useEffect(() => {
-    // Close navbar when clicking a link
-    const navLinks = document.querySelectorAll('.nav-link a');
-    const handleClick = () => {
-      const navBarToggle = document.querySelector('.navbar-collapse');
-      if (navBarToggle.classList.contains('show')) {
-        navBarToggle.classList.remove('show');
+    const handleScroll = () => {
+      const nav = document.querySelector('.custom-navbar');
+      if (window.scrollY > 50) {
+        nav.classList.add('navbar_scroll');
+      } else {
+        nav.classList.remove('navbar_scroll');
       }
     };
 
-    navLinks.forEach(link => {
-      link.addEventListener('click', handleClick);
-    });
-
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      navLinks.forEach(link => {
-        link.removeEventListener('click', handleClick);
-      });
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
   return (
     <BrowserRouter>
-      <Navbar expand="lg" fixed='top'>
+      <Navbar expanded={expanded} onToggle={setExpanded} expand="lg" fixed='top' className="custom-navbar">
         <Container>
           <Navbar.Brand>
-            <Link to="/Home">
+            <Link to="/Home" onClick={closeNavbar}>
               <img src={logo} className="BrandLogo" alt="Logo" />
             </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className='nav-text'>
+            <Nav className='nav-text me-auto'>
               <Nav.Link>
-                <NavLink to="/Home" className={({ isActive }) => isActive ? 'active' : undefined}>
+                <NavLink to="/Home" className={({ isActive }) => isActive ? 'active' : undefined} onClick={closeNavbar}>
                   Home
                 </NavLink>
               </Nav.Link>
               <Nav.Link>
-                <NavLink to="/About" className={({ isActive }) => isActive ? 'active' : undefined}>
+                <NavLink to="/About" className={({ isActive }) => isActive ? 'active' : undefined} onClick={closeNavbar}>
                   About
                 </NavLink>
               </Nav.Link>
               <Nav.Link>
-                <NavLink to="/Service" className={({ isActive }) => isActive ? 'active' : undefined}>
+                <NavLink to="/Service" className={({ isActive }) => isActive ? 'active' : undefined} onClick={closeNavbar}>
                   Service
                 </NavLink>
               </Nav.Link>
               <Nav.Link>
-                <NavLink to="/Membership" className={({ isActive }) => isActive ? 'active' : undefined}>
+                <NavLink to="/Membership" className={({ isActive }) => isActive ? 'active' : undefined} onClick={closeNavbar}>
                   Membership
                 </NavLink>
               </Nav.Link>
               <Nav.Link>
-                <NavLink to="/Contact" className={({ isActive }) => isActive ? 'active' : undefined}>
+                <NavLink to="/Contact" className={({ isActive }) => isActive ? 'active' : undefined} onClick={closeNavbar}>
                   Contact
                 </NavLink>
               </Nav.Link>
-              {/* <NavDropdown title="Admission" id="basic-nav-dropdown">
-                <NavDropdown.Item onClick={handleCoachAdmissionShow}>Coach</NavDropdown.Item>
-                <NavDropdown.Item onClick={handleChampAdmissionShow}>Champ</NavDropdown.Item>
-              </NavDropdown> */}
             </Nav>
             <Nav className='ms-auto'>
-              <Button variant="outline-success" onClick={handleLoginShow}>Login</Button>
-              <Button variant="success" onClick={handleRegisterShow} className="ms-2">Register</Button>
+              <Button variant="outline-success" onClick={() => { handleLoginShow(); closeNavbar(); }}>Login</Button>
+              <Button variant="success" onClick={() => { handleRegisterShow(); closeNavbar(); }} className="ms-2">Register</Button>
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -115,7 +114,7 @@ export default function NavBar() {
         <Route path="/Home" element={<Home />} />
         <Route path="/About" element={<About />} />
         <Route path="/Service" element={<Service />} />
-        <Route path="/service/:id/:type?" element={<ServiceDetail />} />
+        {/* <Route path="/service/:id/:type?" element={<ServiceDetail />} /> */}
         <Route path="/Membership" element={<Membership />} />
         <Route path="/member/:id" element={<MembershipDetail />} />
         <Route path="/Contact" element={<Contact />} />
@@ -126,8 +125,17 @@ export default function NavBar() {
         <Route path="/member" element={<MemberForm />} />
         <Route path="/coach" element={<CoachForm />} />
         <Route path="/guest" element={<GuestForm />} />
-        <Route path="/AdmissionForm" element={< AdmissionForm/>} />
+        <Route path="/AdmissionForm" element={<AdmissionForm />} />
 
+
+{/* ------------------------comePlayModel--------------------------------------- */}
+<Route path="/PlayCards" element={<PlayCards />} />
+
+        <Route path="/sports/:id" element={<SportsDetail />} />
+        
+        <Route path="/confirmation" element={<ConfirmationPage />} />
+        <Route path="/payment" element={<PaymentPage />} />
+      
 
       </Routes>
 

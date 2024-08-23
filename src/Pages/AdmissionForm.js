@@ -95,7 +95,7 @@ const AdmissionForm = () => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="course">Course:</label>
+            <label htmlFor="course">Sports:</label>
             <select
               id="course"
               name="course"
@@ -103,7 +103,7 @@ const AdmissionForm = () => {
               onChange={handleChange}
               required
             >
-              <option value="">Select Course</option>
+              <option value="">Select Sports</option>
               <option value="Football">Football</option>
               <option value="Cricket">Cricket</option>
               <option value="Badminton">Badminton</option>

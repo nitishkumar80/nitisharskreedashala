@@ -2,8 +2,12 @@ import React, { useEffect } from "react";
 import BackgroundImage from "../assets/home-ban.webp"; // Import the background image
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import TypingEffect from "./Home/TypingEffect";
+import Trainers from "./Trainers";
 import ImageSlide from "./Home/ImageSlide";
 import "./CSS/Home.css"; // Make sure to import the CSS file
+import Reviews from "./Reviews";
+import PlayCards from "../comePlay/PlayCards";
+
 
 const Home = () => {
   return (
@@ -16,6 +20,7 @@ const Home = () => {
         backgroundRepeat: 'no-repeat',
         minHeight: '100vh',
         position: 'relative',
+        backgroundAttachment: 'fixed', 
       }}
     >
       <div className='hero-overlay'></div>
@@ -28,7 +33,28 @@ const Home = () => {
             <ImageSlide/>
           </div>
         </div>
+
+
+
+        
+        <div className="Trainer">
+        <Trainers/>
+        </div>
+        <div className="reviews">
+          <Reviews/>
+        </div>
+
+
+
+
+        <div>
+          <PlayCards/>
+        </div>
       </div>
+
+
+
+
     </div>
   );
 };
