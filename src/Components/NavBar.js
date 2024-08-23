@@ -21,11 +21,6 @@ import MemberForm from '../Pages/Registration/MemberForm';
 import GuestForm from '../Pages/Registration/GuestForm';
 import CoachForm from '../Pages/Registration/CoachForm';
 import AdmissionForm from '../Pages/AdmissionForm';
-import Cards from "../comePlay/PlayCards"
-import SportsDetail from '../comePlay/SportsDetail';
-import ConfirmationPage from "../comePlay/ConfirmationPage";
-import PaymentPage from "../comePlay/PaymentPage"
-import PlayCards from '../comePlay/PlayCards';
 
 export default function NavBar() {
   const [showLogin, setShowLogin] = useState(false);
@@ -126,17 +121,6 @@ export default function NavBar() {
         <Route path="/coach" element={<CoachForm />} />
         <Route path="/guest" element={<GuestForm />} />
         <Route path="/AdmissionForm" element={<AdmissionForm />} />
-
-
-{/* ------------------------comePlayModel--------------------------------------- */}
-<Route path="/PlayCards" element={<PlayCards />} />
-
-        <Route path="/sports/:id" element={<SportsDetail />} />
-        
-        <Route path="/confirmation" element={<ConfirmationPage />} />
-        <Route path="/payment" element={<PaymentPage />} />
-      
-
       </Routes>
 
       {/* Popup Forms */}
