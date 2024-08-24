@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import "./Cards.css";
+
 
 const sportsData = [
   { id: 1, name: "Football", description: "Team sport played with a spherical ball", place: "Stadium A", rate: "$50", image: "https://i.pinimg.com/736x/dd/74/e4/dd74e4cfc114acde909d20af9eab8c7a.jpg" },
