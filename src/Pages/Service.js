@@ -125,22 +125,15 @@ import servicesData from "./services.json"; // Assuming you saved the JSON data 
 import Lottie from "react-lottie";
 import animationData from "../LottieAnimation/comePlay.json"; // Replace with your Lottie animation file path
 import { useNavigate } from 'react-router-dom';
-<<<<<<< HEAD
 
-=======
->>>>>>> e8ac5055f07356f36d75a60a0fc6eecbc5aaac3e
 
 const Service = () => {
 
   const navigate = useNavigate();
 
   const handleComePlay = () => {
-<<<<<<< HEAD
     navigate('/ComePlay');
  
-=======
-    navigate('/PlayCards');
->>>>>>> e8ac5055f07356f36d75a60a0fc6eecbc5aaac3e
   };
 
   const defaultOptions = {
@@ -193,23 +186,15 @@ const Service = () => {
           <Lottie options={defaultOptions} height={300} width={400} />
           <button className="play-button" onClick={handleComePlay}>Come and Play</button>
         </div>
-<<<<<<< HEAD
 
         
   
       </div>
  
-=======
-      </div>
->>>>>>> e8ac5055f07356f36d75a60a0fc6eecbc5aaac3e
     </div>
 
 
   );
 };
 
-<<<<<<< HEAD
 export default Service;
-=======
-export default Service;
->>>>>>> e8ac5055f07356f36d75a60a0fc6eecbc5aaac3e

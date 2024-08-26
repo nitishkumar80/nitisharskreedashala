@@ -1,7 +1,6 @@
 .services-section {
     display: flex;
     flex-wrap: wrap;
-<<<<<<< HEAD
     gap: 50px;
     justify-content: center;
     padding: 20px;
@@ -16,26 +15,6 @@
 
 
 
-=======
-    gap: 89px;
-    justify-content: center;
-    padding: 20px;
-
-    grid-template-columns: repeat(4, 1fr); /* 4 columns */
-    grid-template-rows: repeat(3, auto); /* 3 rows */
-  }
-
-  .service{
-    margin-top: 180px;
-  }
-  
-  .service-title-main {
-    text-align: center;
-    font-weight: bold;
-    color: white;
-    margin-bottom: 2rem;
-  }
->>>>>>> e8ac5055f07356f36d75a60a0fc6eecbc5aaac3e
   h1{
     color: white;
   }
@@ -79,12 +58,9 @@
     border-radius: 8px;
   }
   
-<<<<<<< HEAD
 
 
 
-=======
->>>>>>> e8ac5055f07356f36d75a60a0fc6eecbc5aaac3e
   .comePlay {
     display: flex;
     align-items: center;
@@ -169,8 +145,4 @@
         font-size: 0.8rem;
         padding: 7px 14px;
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> e8ac5055f07356f36d75a60a0fc6eecbc5aaac3e
