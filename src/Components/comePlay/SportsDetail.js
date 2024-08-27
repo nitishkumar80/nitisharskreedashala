@@ -82,8 +82,10 @@ const SportsDetail = () => {
           <h1>{name}</h1>
           <p>{description}</p>
           <p><strong>Location:</strong> {place}</p>
+
           <p><strong>Rate:</strong> {rate}</p>
-        </motion.div>
+
+              </motion.div>
 
         <motion.div className="form-container" whileHover={{ backgroundColor: "#f7f7f7" }}>
           <h2>Register for {name}</h2>
