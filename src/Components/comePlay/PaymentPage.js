@@ -39,7 +39,7 @@ const PaymentPage = () => {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <h1>Payment for {state.name}</h1>
-        <p>Base Rate: ${state.rate}</p>
+        <p>Base Rate: ₹{state.rate}</p>
         <div className="additional-options">
           <h2>Select Additional Options:</h2>
           {Object.keys(additionalCosts).map((feature) => (
@@ -49,12 +49,12 @@ const PaymentPage = () => {
                 value={feature}
                 onChange={handleFeatureChange}
               />
-              {feature} (+${additionalCosts[feature]})
+              {feature} (+₹{additionalCosts[feature]})
             </label>
           ))}
         </div>
         <div className="total-amount">
-          <h2>Total Amount: ${totalAmount}</h2>
+          <h2>Total Amount: ₹{totalAmount}</h2>
         </div>
         <button className="pay-button" onClick={handlePayment}>
           Pay Now
