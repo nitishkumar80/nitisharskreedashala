@@ -39,6 +39,9 @@ import GuestForm from './Pages/Registration/GuestForm';
 import CoachForm from './Pages/Registration/CoachForm';
 import AdmissionForm from './Pages/AdmissionForm';
 import ComePlay from './Components/comePlay/ComePlay';
+import SportsDetail from './Components/comePlay/SportsDetail';
+import PaymentPage from './Components/comePlay/PaymentPage';
+import ConfirmationPage from './Components/comePlay/ConfirmationPage';
 
 
 function App() {
@@ -61,6 +64,11 @@ function App() {
         <Route path="/guest" element={<GuestForm />} />
         <Route path="/AdmissionForm" element={<AdmissionForm />} />
         <Route path="/ComePlay" element={<ComePlay />} />
+        <Route path="/sports/:id" element={<SportsDetail />} />
+        <Route path="/payment" element={<PaymentPage />} />
+        <Route path="/confirmation" element={<ConfirmationPage />} />
+
+       
       </Routes>
     </BrowserRouter>
   );
