@@ -194,11 +194,7 @@ export default function Trainers() {
               your workout with us
             </p>
           </div>
-          <div className="middle">
-            <Button buttonStyle="btn--primary" buttonSize="btn--large">
-              View Challenges{" "}
-            </Button>{" "}
-          </div>
+   
         </div>
       </div>
 

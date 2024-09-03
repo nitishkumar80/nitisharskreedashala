@@ -126,12 +126,14 @@ import Lottie from "react-lottie";
 import animationData from "../LottieAnimation/comePlay.json"; // Replace with your Lottie animation file path
 import { useNavigate } from 'react-router-dom';
 
+
 const Service = () => {
 
   const navigate = useNavigate();
 
   const handleComePlay = () => {
-    navigate('/PlayCards');
+    navigate('/ComePlay');
+ 
   };
 
   const defaultOptions = {
@@ -184,7 +186,11 @@ const Service = () => {
           <Lottie options={defaultOptions} height={300} width={400} />
           <button className="play-button" onClick={handleComePlay}>Come and Play</button>
         </div>
+
+        
+  
       </div>
+ 
     </div>
 
 

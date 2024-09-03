@@ -6,7 +6,6 @@ import Trainers from "./Trainers";
 import ImageSlide from "./Home/ImageSlide";
 import "./CSS/Home.css"; // Make sure to import the CSS file
 import Reviews from "./Reviews";
-import PlayCards from "../comePlay/PlayCards";
 
 
 const Home = () => {
@@ -42,13 +41,6 @@ const Home = () => {
         </div>
         <div className="reviews">
           <Reviews/>
-        </div>
-
-
-
-
-        <div>
-          <PlayCards/>
         </div>
       </div>
 

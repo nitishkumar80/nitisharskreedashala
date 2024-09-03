@@ -1,24 +1,20 @@
 .services-section {
     display: flex;
     flex-wrap: wrap;
-    gap: 89px;
+    gap: 50px;
     justify-content: center;
     padding: 20px;
-
+    margin-top: 13rem;
     grid-template-columns: repeat(4, 1fr); /* 4 columns */
     grid-template-rows: repeat(3, auto); /* 3 rows */
-  }
-
-  .service{
-    margin-top: 180px;
+    
   }
   
-  .service-title-main {
-    text-align: center;
-    font-weight: bold;
-    color: white;
-    margin-bottom: 2rem;
-  }
+
+
+
+
+
   h1{
     color: white;
   }
@@ -62,6 +58,9 @@
     border-radius: 8px;
   }
   
+
+
+
   .comePlay {
     display: flex;
     align-items: center;
