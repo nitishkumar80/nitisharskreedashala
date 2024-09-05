@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e3979508.css",
+    "main.js": "/static/js/main.b426d035.js",
+    "static/js/239.2586e0e7.chunk.js": "/static/js/239.2586e0e7.chunk.js",
+    "static/js/213.31a2ec89.chunk.js": "/static/js/213.31a2ec89.chunk.js",
+    "static/js/732.58df7c5f.chunk.js": "/static/js/732.58df7c5f.chunk.js",
+    "static/media/home-ban.webp": "/static/media/home-ban.1c73197ad7daf23db782.webp",
+    "static/media/bn6.jpg": "/static/media/bn6.c4282b3483d39cd94555.jpg",
+    "static/media/bnb9.jpg": "/static/media/bnb9.533281ae80feeabd7ac4.jpg",
+    "static/media/6.png": "/static/media/6.c3d7c3392d5b22823c75.png",
+    "static/media/academy1.jpg": "/static/media/academy1.c5ecd8bc91c662688048.jpg",
+    "static/media/bn5.jpg": "/static/media/bn5.935cefaad7ac6a71c38d.jpg",
+    "static/media/register1.jpg": "/static/media/register1.d0c319f4c3e687d9c45d.jpg",
+    "static/media/Anklepants.otf": "/static/media/Anklepants.95a3bf6de9763659ef05.otf",
+    "static/media/Founder1.png": "/static/media/Founder1.4879a5500c8d151777a6.png",
+    "static/media/Founder2.png": "/static/media/Founder2.4879a5500c8d151777a6.png",
+    "static/media/Founder3.png": "/static/media/Founder3.4879a5500c8d151777a6.png",
+    "static/media/newww.png": "/static/media/newww.1fe39277b647bd69749d.png",
+    "index.html": "/index.html",
+    "main.e3979508.css.map": "/static/css/main.e3979508.css.map",
+    "main.b426d035.js.map": "/static/js/main.b426d035.js.map",
+    "239.2586e0e7.chunk.js.map": "/static/js/239.2586e0e7.chunk.js.map",
+    "213.31a2ec89.chunk.js.map": "/static/js/213.31a2ec89.chunk.js.map",
+    "732.58df7c5f.chunk.js.map": "/static/js/732.58df7c5f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e3979508.css",
+    "static/js/main.b426d035.js"
+  ]
+}

@@ -29,7 +29,7 @@
   height: 3px;
   bottom: 0;
   left: 0;
-  background-color: #FF6347;
+  background-color: #68a9d3;
   visibility: hidden;
   transform: scaleX(0);
   transition: all 0.3s ease-in-out;
@@ -41,13 +41,13 @@
 }
 
 .navbar .nav-link a:hover {
-  color: #FFD700;
+  color: #68a9d3;
   transform: translateY(-3px);
 }
 
 .navbar .nav-link a.active {
-  color: #17cc50;
-  border-bottom: 3px solid #FFD700;
+  color: #68a9d3;
+  border-bottom: 3px solid #68a9d3;
 }
 
 .BrandLogo {
@@ -95,25 +95,25 @@
 
 /* Button Styles */
 .navbar .btn-outline-success {
-  border-color: #FFD700;
-  color: #FFD700;
+  border-color: #68a9d3;
+  color: #68a9d3;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar .btn-outline-success:hover {
-  background-color: #FFD700;
+  background-color: #68a9d3;
   color: #000;
   transform: scale(1.05);
 }
 
 .navbar .btn-success {
-  background-color: #FF6347;
-  border-color: #FF6347;
+  background-color: #68a9d3;
+  border-color: #68a9d3;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar .btn-success:hover {
-  background-color: #FFD700;
+  background-color: #68a9d3;
   color: #000;
   transform: scale(1.05);
 }
@@ -167,14 +167,53 @@
 }
 
 
-/* Scroll Effect */
-.navbar_scroll {
-  background-color: rgba(0, 0, 0, 0.8) !important;
-  
-  padding: 0.1px 20px !important;
-  transition: background-color 0.3s ease, padding 0.3s ease;
+/* User Avatar */
+.user-avatar-btn {
+  background-color: transparent;
+  border: none;
+  padding: 0;
 }
 
-.navbar_scroll .nav-link a {
-  color: #FFFFFF !important;
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.user-avatar-btn:hover .user-avatar {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* User Menu */
+.user-menu {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+}
+
+.user-menu .dropdown-item {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.user-menu .dropdown-item:hover {
+  background-color: #f0f0f0;
+  color: #007bff;
+}
+
+.user-menu .dropdown-item .me-2 {
+  font-size: 18px;
+}
+
+/* Navbar Scroll Effect */
+.navbar_scroll {
+  background-color: rgba(0, 0, 0, 0.85) !important;
+  padding: 10px 20px !important;
+  transition: background-color 0.3s ease, padding 0.3s ease;
 }
