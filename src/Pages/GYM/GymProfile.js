@@ -1,12 +1,5 @@
 import React from "react";
 import "./gym.css";
-import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
-import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
-import VideoLibraryIcon from "@mui/icons-material/VideoLibrary";
-import AssignmentIcon from "@mui/icons-material/Assignment";
-import SportsIcon from "@mui/icons-material/Sports";
-import PersonIcon from "@mui/icons-material/Person";
-import BarChartIcon from "@mui/icons-material/BarChart";
 
 const GymProfile = () => {
   return (
@@ -34,25 +27,20 @@ const GymProfile = () => {
 
       <div className="InfoSection">
         <div className="InfoCard">
-          <FitnessCenterIcon style={{ color: "#f3826f" }} />
           <h4>Fitness Goals</h4>
           <p>Build Muscle, Lose Fat, Improve Stamina</p>
         </div>
         <div className="InfoCard">
-          <CalendarTodayIcon style={{ color: "#f3826f" }} />
           <h4>Joined</h4>
           <p>January 15, 2023</p>
         </div>
         <div className="InfoCard">
-          <SportsIcon style={{ color: "#f3826f" }} />
           <h4>Achievements</h4>
           <p>Weight Loss: 10 lbs, 5K Marathon</p>
         </div>
       </div>
 
-      <h4 className="SectionHeader">
-        <VideoLibraryIcon /> Training Videos
-      </h4>
+      <h4 className="SectionHeader">Training Videos</h4>
       <div className="HorizontalScroll">
         <div className="VideoCard">
           <img
@@ -80,46 +68,34 @@ const GymProfile = () => {
         </div>
       </div>
 
-      <h4 className="SectionHeader">
-        <AssignmentIcon /> Diet Chart
-      </h4>
+      <h4 className="SectionHeader">Diet Chart</h4>
       <div className="DietChart">
         <p>Breakfast: Oats, Eggs, Coffee</p>
         <p>Lunch: Grilled Chicken, Brown Rice</p>
         <p>Dinner: Fish, Veggies</p>
       </div>
 
-      <h4 className="SectionHeader">
-        <PersonIcon /> View Session
-      </h4>
+      <h4 className="SectionHeader">View Session</h4>
       <div className="SessionContainer">
         <p>Next Session: Personal Training - Sept 15, 2024</p>
       </div>
 
-      <h4 className="SectionHeader">
-        <SportsIcon /> View Competition
-      </h4>
+      <h4 className="SectionHeader">View Competition</h4>
       <div className="CompetitionContainer">
         <p>Upcoming Event: 10K Marathon - Oct 12, 2024</p>
       </div>
 
-      <h4 className="SectionHeader">
-        <PersonIcon /> One-to-One Trainer
-      </h4>
+      <h4 className="SectionHeader">One-to-One Trainer</h4>
       <div className="TrainerContainer">
         <p>Trainer: Alex Smith (Strength & Conditioning)</p>
       </div>
 
-      <h4 className="SectionHeader">
-        <AssignmentIcon /> Test Repeat Monthly
-      </h4>
+      <h4 className="SectionHeader">Test Repeat Monthly</h4>
       <div className="TestContainer">
         <p>Next Fitness Test: Oct 1, 2024</p>
       </div>
 
-      <h4 className="SectionHeader">
-        <BarChartIcon /> Health Chart
-      </h4>
+      <h4 className="SectionHeader">Health Chart</h4>
       <div className="HealthChart">
         <p>Body Fat Percentage: 12%</p>
         <p>Muscle Mass: 35%</p>
@@ -128,9 +104,7 @@ const GymProfile = () => {
         </div>
       </div>
 
-      <h4 className="SectionHeader">
-        <BarChartIcon /> Performance Tracker
-      </h4>
+      <h4 className="SectionHeader">Performance Tracker</h4>
       <div className="PerformanceTracker">
         <div className="TrackerContainer">
           <div className="TrackerCard">

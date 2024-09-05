@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Link, NavLink } from 'react-router-dom';
+import { BrowserRouter, Link, NavLink, useNavigate } from 'react-router-dom';
 import { Navbar, Container, Nav, Button, Dropdown, Image } from 'react-bootstrap';
 import { FaSignOutAlt, FaUserAlt, FaCog } from 'react-icons/fa';  // Import icons for the dropdown menu
 import logo from "../Images/main/newww.png";
@@ -22,6 +22,17 @@ export default function NavBar() {
   const handleRegisterShow = () => setShowRegister(true);
 
   const closeNavbar = () => setExpanded(false);
+  const navigate = useNavigate();
+
+  const handleProfile = () => {
+    navigate('/profile');
+  };
+
+  const handleProfileSetting = () => {
+    navigate('/settings');
+  };
+
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -79,7 +90,6 @@ export default function NavBar() {
           <Nav className='ms-auto d-flex align-items-center'>
             <Button variant="outline-success" onClick={() => { handleLoginShow(); closeNavbar(); }}>Login</Button>
             <Button variant="success" onClick={() => { handleRegisterShow(); closeNavbar(); }} className="ms-2">Register</Button>
-
             {/* User Avatar */}
             <Dropdown align="end" className="ms-3">
               <Dropdown.Toggle variant="outline-secondary" id="dropdown-basic" className="user-avatar-btn">
@@ -87,10 +97,10 @@ export default function NavBar() {
               </Dropdown.Toggle>
 
               <Dropdown.Menu className="user-menu">
-                <Dropdown.Item href="/profile">
+                <Dropdown.Item  onClick={handleProfile}>
                   <FaUserAlt className="me-2" /> Profile
                 </Dropdown.Item>
-                <Dropdown.Item href="#/settings">
+                <Dropdown.Item onClick={handleProfileSetting}>
                   <FaCog className="me-2" /> Settings
                 </Dropdown.Item>
                 <Dropdown.Item href="#/logout">

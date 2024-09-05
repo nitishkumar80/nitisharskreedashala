@@ -44,6 +44,7 @@ import ConfirmationPage from './Pages/comePlay/ConfirmationPage';
 import Membership from './Pages/MEMBERSHIP/Membership';
 import MembershipDetail from './Pages/MEMBERSHIP/MembershipDetail';
 import GymProfile from './Pages/GYM/GymProfile';
+import ProfileSettings from './Pages/GYM/ProfileSettings';
 
 
 function App() {
@@ -72,7 +73,7 @@ function App() {
 
         <Route path="/profile" element={<GymProfile />} />
 
-
+        <Route path="/settings" element={<ProfileSettings />} />
        
       </Routes>
     </BrowserRouter>
