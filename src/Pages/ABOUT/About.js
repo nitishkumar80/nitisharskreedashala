@@ -13,6 +13,7 @@ import './About.css';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import BackgroundImage from "../../assets/bn6.jpg";
+import Footer from '../Footer/Footer';
       
 const About = () => {
   const navigate = useNavigate();
@@ -271,6 +272,9 @@ const About = () => {
           </MapContainer>
         </div>
       </div>
+
+
+      <Footer/>
     </div>
   );
 };
